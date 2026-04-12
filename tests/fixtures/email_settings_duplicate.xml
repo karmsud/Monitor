@@ -1,0 +1,20 @@
+<Settings>
+    <Outlook>
+        <MailboxCollection>
+            <DuplicateJob>
+                <Mailbox>test@example.com</Mailbox>
+                <Folder>Inbox</Folder>
+                <SME>sme@example.com</SME>
+                <SaveLocation>{DealFolder}\test\</SaveLocation>
+                <Parsers><StandardParser>.*</StandardParser></Parsers>
+            </DuplicateJob>
+            <DuplicateJob>
+                <Mailbox>test2@example.com</Mailbox>
+                <Folder>Inbox</Folder>
+                <SME>sme2@example.com</SME>
+                <SaveLocation>{DealFolder}\test2\</SaveLocation>
+                <Parsers><StandardParser>.*</StandardParser></Parsers>
+            </DuplicateJob>
+        </MailboxCollection>
+    </Outlook>
+</Settings>

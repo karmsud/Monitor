@@ -1,0 +1,47 @@
+##################################################################
+##	Script Name:    EmailMonitor.ps1
+##	Parameters:     .\Settings\Settings.xml
+##	User:           TestUser
+##	Machine:        TESTMACHINE
+##	Log file:       \\server\Logs\EmailMonitor_20250115.log
+##################################################################
+2025-01-15 08:00:01.000:	Running as ProcessID 12345...
+2025-01-15 08:00:02.000:	Mapping N:
+2025-01-15 08:00:02.100:	Done
+2025-01-15 08:00:05.000:	Starting Outlook download for TestJob_Alpha (frp.test@example.com)...
+2025-01-15 08:00:05.100:	Loading EWS Assembly
+2025-01-15 08:00:06.000:	Connecting as application account
+2025-01-15 08:00:07.000:	Connected...
+2025-01-15 08:00:07.100:	Searching for items in mailbox... 
+2025-01-15 08:00:08.000:	found 3
+2025-01-15 08:00:09.000:	Processing: [January Report]
+2025-01-15 08:00:09.100:	From: sender@partner.com
+2025-01-15 08:00:09.200:	Matched email [January Report] to [ConditionalParser] parser
+2025-01-15 08:00:10.000:	 Load > RPT_Jan2025.xlsx (application/octet-stream)
+2025-01-15 08:00:11.000:	Queue file [RPT_Jan2025.xlsx] for [CL_Standard] template
+2025-01-15 08:00:12.000:	Processing: [Weekly Data Push]
+2025-01-15 08:00:12.100:	From: noreply@servicer.com
+2025-01-15 08:00:12.200:	Matched email [Weekly Data Push] to [ConditionalParser] parser
+2025-01-15 08:00:13.000:	 Load > RPT_Weekly_01132025.xls (application/octet-stream)
+2025-01-15 08:00:14.000:	Processing: [FYI - no attachment]
+2025-01-15 08:00:14.100:	From: admin@internal.com
+2025-01-15 08:00:14.200:	No attachments found. Skipping.
+2025-01-15 08:01:00.000:	Starting Outlook download for TestJob_Beta (frp.test@example.com)...
+2025-01-15 08:01:00.100:	Connecting as application account
+2025-01-15 08:01:01.000:	Connected...
+2025-01-15 08:01:01.100:	Searching for items in mailbox... 
+2025-01-15 08:01:02.000:	found 1
+2025-01-15 08:01:03.000:	Processing: [Monthly Report]
+2025-01-15 08:01:03.100:	From: reports@vendor.com
+2025-01-15 08:01:03.200:	Matched email [Monthly Report] to [StandardParser] parser
+2025-01-15 08:01:04.000:	 Load > DATA_2025.csv (application/octet-stream)
+2025-01-15 08:01:05.000:	 Load > SummaryReport.pdf (application/octet-stream)
+2025-01-15 08:02:00.000:	Starting Outlook download for TestJob_Gamma (ops@example.com)...
+2025-01-15 08:02:00.100:	Connecting as application account
+2025-01-15 08:02:01.000:	ERROR: Connection timeout accessing mailbox ops@example.com
+2025-01-15 08:02:02.000:	Did not find DID mapping for [TestDeal_999]
+2025-01-15 08:02:10.000:	Starting Outlook download for TestJob_NoServicer (frp.shelf@example.com)...
+2025-01-15 08:02:10.100:	Connecting as application account
+2025-01-15 08:02:11.000:	Connected...
+2025-01-15 08:02:11.100:	Searching for items in mailbox... 
+2025-01-15 08:02:12.000:	found 0

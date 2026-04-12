@@ -1,0 +1,9 @@
+<Settings>
+    <Outlook>
+        <MailboxCollection>
+            <BadJob>
+                <Folder>Inbox</Folder>
+            </BadJob>
+        </MailboxCollection>
+    </Outlook>
+</Settings>

@@ -1,0 +1,1203 @@
+[
+  {
+    "id": 1,
+    "pattern": "cross_layer",
+    "prompt": "Do we have any jobs and keywords setup for Deal with DID: \"ICW MAT TRUST SUBI A1\"",
+    "expected_category": "deal_mapping",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["deal_lookup", "job_detail"],
+    "description": "Cross-layer: deal DID → find related jobs and keywords"
+  },
+  {
+    "id": 2,
+    "pattern": "cross_layer",
+    "prompt": "Is job CMBS_GreyCo working end-to-end? Check config, deals, and processing.",
+    "expected_category": "job_config",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["job_detail", "deal_lookup", "template_status"],
+    "description": "Cross-layer: job config → deals → processing verification"
+  },
+  {
+    "id": 3,
+    "pattern": "cross_layer",
+    "prompt": "Show me all Fay jobs, their linked deals, and whether those deals have been processing recently.",
+    "expected_category": "job_config",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["search_jobs", "job_detail", "template_status"],
+    "description": "Cross-layer: job list → deals → processing status"
+  },
+  {
+    "id": 4,
+    "pattern": "cross_layer",
+    "prompt": "For servicer 296, show me the full picture: jobs, deals, coverage, and recent processing.",
+    "expected_category": "system_admin",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["servicer_dossier", "processing_history"],
+    "description": "Cross-layer: servicer → all layers"
+  },
+  {
+    "id": 5,
+    "pattern": "cross_layer",
+    "prompt": "Which deals under CompanyID 150 have no processing activity in the last 30 days?",
+    "expected_category": "deal_mapping",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["deal_lookup", "processing_history"],
+    "description": "Cross-layer: deal lookup → processing history gap detection"
+  },
+  {
+    "id": 6,
+    "pattern": "cross_layer",
+    "prompt": "Show me all CMBS jobs and check if their associated servicers have coverage in tblExternalDIDRef.",
+    "expected_category": "system_admin",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["search_jobs", "coverage_gaps"],
+    "description": "Cross-layer: job search → coverage validation"
+  },
+  {
+    "id": 7,
+    "pattern": "cross_layer",
+    "prompt": "For deal CMLTI 2014-A, tell me the job config, email sender, and the last 5 processing runs.",
+    "expected_category": "deal_mapping",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["deal_lookup", "processing_history"],
+    "description": "Cross-layer: deal → config + processing history"
+  },
+  {
+    "id": 8,
+    "pattern": "cross_layer",
+    "prompt": "Which jobs are processing deals that have ImportDID collisions?",
+    "expected_category": "system_admin",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["collision_detection", "deal_lookup"],
+    "description": "Cross-layer: collision detection → job mapping"
+  },
+  {
+    "id": 9,
+    "pattern": "cross_layer",
+    "prompt": "Are there any orphaned jobs, and if so, what's their recent log activity?",
+    "expected_category": "system_admin",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["orphan_detection", "job_health"],
+    "description": "Cross-layer: orphan detection → log health"
+  },
+  {
+    "id": 10,
+    "pattern": "cross_layer",
+    "prompt": "Show all deals for servicer 569 and check if each deal's template has been running successfully.",
+    "expected_category": "deal_mapping",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["deal_lookup", "template_status"],
+    "description": "Cross-layer: deal mapping → template execution status"
+  },
+  {
+    "id": 11,
+    "pattern": "cross_layer",
+    "prompt": "What keywords map to CompanyID 296 and are any of those DIDs failing in processing?",
+    "expected_category": "deal_mapping",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["deal_lookup", "failure_analysis"],
+    "description": "Cross-layer: deal keywords → failure analysis"
+  },
+  {
+    "id": 12,
+    "pattern": "cross_layer",
+    "prompt": "Get me the dossier on servicer 150 and then check processing duration for their templates.",
+    "expected_category": "processing",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["servicer_dossier", "processing_duration"],
+    "description": "Cross-layer: servicer dossier → processing performance"
+  },
+  {
+    "id": 13,
+    "pattern": "cross_layer",
+    "prompt": "List all SFTP jobs and verify their email settings configuration is valid.",
+    "expected_category": "job_config",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["search_jobs", "validate_sftp"],
+    "description": "Cross-layer: job list → config validation"
+  },
+  {
+    "id": 14,
+    "pattern": "cross_layer",
+    "prompt": "For deal TPMT 2014-A, show the job that handles it and the job's health metrics.",
+    "expected_category": "deal_mapping",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["deal_lookup", "job_health"],
+    "description": "Cross-layer: deal → job → health"
+  },
+  {
+    "id": 15,
+    "pattern": "cross_layer",
+    "prompt": "Which jobs have failing deals in the last week? Cross-reference job config with processing failures.",
+    "expected_category": "processing",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["failure_analysis", "search_jobs"],
+    "description": "Cross-layer: processing failures → job config"
+  },
+  {
+    "id": 16,
+    "pattern": "cross_layer",
+    "prompt": "Show me the full pipeline for servicer 296 — from Settings.xml config through deal mapping to processing history.",
+    "expected_category": "system_admin",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["deal_pipeline"],
+    "description": "Cross-layer: end-to-end pipeline view"
+  },
+  {
+    "id": 17,
+    "pattern": "cross_layer",
+    "prompt": "Check if the deals assigned to job TOWD_Wells_6502 are actually processing and at what frequency.",
+    "expected_category": "processing",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["job_detail", "processing_history"],
+    "description": "Cross-layer: job → deals → processing frequency"
+  },
+  {
+    "id": 18,
+    "pattern": "cross_layer",
+    "prompt": "What's the coverage gap analysis and are there any collisions for the same set of servicers?",
+    "expected_category": "system_admin",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["coverage_gaps", "collision_detection"],
+    "description": "Cross-layer: coverage + collision analysis together"
+  },
+  {
+    "id": 19,
+    "pattern": "cross_layer",
+    "prompt": "For each job with the CMBS scrubber, list the deals and show processing duration stats.",
+    "expected_category": "job_config",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["search_jobs", "job_detail", "processing_duration"],
+    "description": "Cross-layer: job by scrubber → deals → duration"
+  },
+  {
+    "id": 20,
+    "pattern": "cross_layer",
+    "prompt": "Show me all deals for CompanyID 569, their linked jobs, and the daily summary from the logs.",
+    "expected_category": "system_admin",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["deal_lookup", "daily_summary"],
+    "description": "Cross-layer: deals → jobs → log summary"
+  },
+  {
+    "id": 21,
+    "pattern": "diagnostic",
+    "prompt": "Why isn't servicer 296 processing any files?",
+    "expected_category": "deal_mapping",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["servicer_dossier", "failure_analysis", "job_health"],
+    "description": "Diagnostic: investigate why a servicer isn't processing"
+  },
+  {
+    "id": 22,
+    "pattern": "diagnostic",
+    "prompt": "Job CMLTI_Fay hasn't generated any output in 3 days. What's wrong?",
+    "expected_category": "job_config",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["job_detail", "job_health", "failure_analysis"],
+    "description": "Diagnostic: job not producing output"
+  },
+  {
+    "id": 23,
+    "pattern": "diagnostic",
+    "prompt": "We're getting DID lookup failures for CMLTI 2014-A. Diagnose the issue.",
+    "expected_category": "deal_mapping",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["deal_lookup", "did_failures", "job_detail"],
+    "description": "Diagnostic: DID lookup failure investigation"
+  },
+  {
+    "id": 24,
+    "pattern": "diagnostic",
+    "prompt": "Why is template TPMT_SPS taking so long to process? Investigate the bottleneck.",
+    "expected_category": "processing",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["processing_duration", "failure_analysis", "template_status"],
+    "description": "Diagnostic: processing duration bottleneck"
+  },
+  {
+    "id": 25,
+    "pattern": "diagnostic",
+    "prompt": "Emails from reports@fay.com are being received but not processed. What's happening?",
+    "expected_category": "system_admin",
+    "expected_mode": "pipeline",
+    "expected_pipeline": "email_triage",
+    "expected_tools": ["triage_email", "search_jobs", "daily_summary"],
+    "description": "Diagnostic: emails received but not processed — email triage"
+  },
+  {
+    "id": 26,
+    "pattern": "diagnostic",
+    "prompt": "Investigate why deal TOWD 2020-A has a 50% failure rate this month.",
+    "expected_category": "deal_mapping",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["deal_lookup", "failure_analysis", "processing_history"],
+    "description": "Diagnostic: high failure rate for specific deal"
+  },
+  {
+    "id": 27,
+    "pattern": "diagnostic",
+    "prompt": "The daily summary shows zero emails processed today. Is the system down?",
+    "expected_category": "logs_ops",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["daily_summary", "system_health", "agent_status"],
+    "description": "Diagnostic: system might be down"
+  },
+  {
+    "id": 28,
+    "pattern": "diagnostic",
+    "prompt": "Why are we seeing ImportDID collisions for keyword M70? Which deals are affected?",
+    "expected_category": "deal_mapping",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["collision_detection", "deal_lookup"],
+    "description": "Diagnostic: ImportDID collision investigation"
+  },
+  {
+    "id": 29,
+    "pattern": "diagnostic",
+    "prompt": "Job CMBS_GreyCo was working yesterday but started failing today. What changed?",
+    "expected_category": "job_config",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["job_detail", "job_health", "xml_diff"],
+    "description": "Diagnostic: job started failing after config change"
+  },
+  {
+    "id": 30,
+    "pattern": "diagnostic",
+    "prompt": "Some files are ending up in the manual queue when they should be automated. Why?",
+    "expected_category": "processing",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["manual_queue", "failure_analysis"],
+    "description": "Diagnostic: unexpected manual queue entries"
+  },
+  {
+    "id": 31,
+    "pattern": "diagnostic",
+    "prompt": "Troubleshoot: servicer 569's SFTP job is configured but no files are coming through.",
+    "expected_category": "deal_mapping",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["servicer_dossier", "validate_sftp", "processing_history"],
+    "description": "Diagnostic: SFTP job configured but no files"
+  },
+  {
+    "id": 32,
+    "pattern": "diagnostic",
+    "prompt": "Debug: file M:\\Data\\incoming\\report_2024.xlsx was processed twice. What happened?",
+    "expected_category": "processing",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["source_trace", "processing_history"],
+    "description": "Diagnostic: duplicate file processing"
+  },
+  {
+    "id": 33,
+    "pattern": "diagnostic",
+    "prompt": "Several templates stopped working after the last config deploy. Which ones and why?",
+    "expected_category": "processing",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["failure_analysis", "xml_diff", "list_backups"],
+    "description": "Diagnostic: templates broken after deploy"
+  },
+  {
+    "id": 34,
+    "pattern": "diagnostic",
+    "prompt": "Investigate the error pattern for DID lookup failures in the last 7 days.",
+    "expected_category": "logs_ops",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["did_failures", "log_trends"],
+    "description": "Diagnostic: DID failure pattern analysis"
+  },
+  {
+    "id": 35,
+    "pattern": "diagnostic",
+    "prompt": "The log performance report shows CMBS_GreyCo is underperforming. Dig deeper.",
+    "expected_category": "logs_ops",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["log_performance", "job_health", "processing_duration"],
+    "description": "Diagnostic: underperforming job deep dive"
+  },
+  {
+    "id": 36,
+    "pattern": "diagnostic",
+    "prompt": "Why do we have coverage gaps for servicer 999? Show what's missing.",
+    "expected_category": "deal_mapping",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["coverage_gaps", "servicer_dossier"],
+    "description": "Diagnostic: coverage gap investigation for specific servicer"
+  },
+  {
+    "id": 37,
+    "pattern": "diagnostic",
+    "prompt": "Diagnose: deal CWALT 2005-J has keywords in tblExternalDIDRef but no job is matching them.",
+    "expected_category": "deal_mapping",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["deal_lookup", "search_jobs", "orphan_detection"],
+    "description": "Diagnostic: deal has keywords but no job match"
+  },
+  {
+    "id": 38,
+    "pattern": "diagnostic",
+    "prompt": "Check why the error rate spiked yesterday for all Wells Fargo jobs.",
+    "expected_category": "job_config",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["search_jobs", "failure_analysis", "daily_summary"],
+    "description": "Diagnostic: error rate spike for a group of jobs"
+  },
+  {
+    "id": 39,
+    "pattern": "diagnostic",
+    "prompt": "Something is wrong with the SFTP settings — validate and check recent SFTP job health.",
+    "expected_category": "job_config",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["validate_sftp", "job_health"],
+    "description": "Diagnostic: SFTP settings validation + health"
+  },
+  {
+    "id": 40,
+    "pattern": "diagnostic",
+    "prompt": "Manual queue volume increased 3x this week. What's causing it?",
+    "expected_category": "processing",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["manual_queue", "failure_analysis", "log_trends"],
+    "description": "Diagnostic: manual queue volume spike"
+  },
+  {
+    "id": 41,
+    "pattern": "audit",
+    "prompt": "Audit: are all configured jobs actually processing files? Flag any that have zero activity.",
+    "expected_category": "job_config",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["search_jobs", "template_status"],
+    "description": "Audit: verify all jobs have activity"
+  },
+  {
+    "id": 42,
+    "pattern": "audit",
+    "prompt": "Verify that every servicer in Settings.xml has matching entries in tblExternalDIDRef.",
+    "expected_category": "deal_mapping",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["coverage_gaps", "search_jobs"],
+    "description": "Audit: servicer-to-DIDRef coverage check"
+  },
+  {
+    "id": 43,
+    "pattern": "audit",
+    "prompt": "Run a full compliance check: validate both email and SFTP config, check for orphans and collisions.",
+    "expected_category": "system_admin",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["validate_email", "validate_sftp", "orphan_detection", "collision_detection"],
+    "description": "Audit: full compliance check"
+  },
+  {
+    "id": 44,
+    "pattern": "audit",
+    "prompt": "Check if any deal keywords in tblExternalDIDRef have duplicates or ambiguous matches.",
+    "expected_category": "deal_mapping",
+    "expected_mode": "single_tool",
+    "expected_pipeline": null,
+    "expected_tools": ["collision_detection"],
+    "description": "Audit: keyword duplication check"
+  },
+  {
+    "id": 45,
+    "pattern": "audit",
+    "prompt": "Verify that automation coverage is above 90% — show the manual vs automated split.",
+    "expected_category": "processing",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["manual_queue", "template_status"],
+    "description": "Audit: automation coverage threshold"
+  },
+  {
+    "id": 46,
+    "pattern": "audit",
+    "prompt": "Are there any templates in tblTemplateStaging that aren't referenced by any Settings.xml job?",
+    "expected_category": "processing",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["templates", "staging_search"],
+    "description": "Audit: unreferenced templates"
+  },
+  {
+    "id": 47,
+    "pattern": "audit",
+    "prompt": "Check that all backup-capable settings have been backed up in the last 24 hours.",
+    "expected_category": "deployment",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["list_backups"],
+    "description": "Audit: backup recency check"
+  },
+  {
+    "id": 48,
+    "pattern": "audit",
+    "prompt": "Audit the SFTP configuration for any missing required fields or structural issues.",
+    "expected_category": "job_config",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["validate_sftp"],
+    "description": "Audit: single-tool SFTP validation"
+  },
+  {
+    "id": 49,
+    "pattern": "audit",
+    "prompt": "Verify that every job's ServicerID corresponds to an active servicer with deals in tblExternalDIDRef.",
+    "expected_category": "deal_mapping",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["orphan_detection", "coverage_gaps"],
+    "description": "Audit: servicer validity cross-check"
+  },
+  {
+    "id": 50,
+    "pattern": "audit",
+    "prompt": "Check all email monitoring jobs for valid sender addresses and scrubber configurations.",
+    "expected_category": "job_config",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["validate_email", "search_jobs"],
+    "description": "Audit: email job config validation"
+  },
+  {
+    "id": 51,
+    "pattern": "audit",
+    "prompt": "Validate the email settings configuration and list any warnings.",
+    "expected_category": "job_config",
+    "expected_mode": "single_tool",
+    "expected_pipeline": null,
+    "expected_tools": ["validate_email"],
+    "description": "Audit: single-tool email validation (simple)"
+  },
+  {
+    "id": 52,
+    "pattern": "audit",
+    "prompt": "Are there any jobs that could be consolidated and if so, which ones are redundant?",
+    "expected_category": "system_admin",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["consolidation_analysis"],
+    "description": "Audit: job consolidation opportunities"
+  },
+  {
+    "id": 53,
+    "pattern": "audit",
+    "prompt": "Run system health check and verify all data layers are connected and reporting.",
+    "expected_category": "system_admin",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["system_health", "agent_status"],
+    "description": "Audit: system health verification"
+  },
+  {
+    "id": 54,
+    "pattern": "audit",
+    "prompt": "Confirm that recent config changes haven't broken any existing job processing.",
+    "expected_category": "deployment",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["xml_diff", "failure_analysis"],
+    "description": "Audit: post-deploy impact verification"
+  },
+  {
+    "id": 55,
+    "pattern": "audit",
+    "prompt": "Check if there are processing failures that correlate with specific template scrubber types.",
+    "expected_category": "processing",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["failure_analysis", "templates"],
+    "description": "Audit: failure-by-scrubber correlation"
+  },
+  {
+    "id": 56,
+    "pattern": "impact",
+    "prompt": "What if we remove servicer 569 entirely? Show the impact on jobs, deals, and processing.",
+    "expected_category": "system_admin",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["impact_analysis", "deal_lookup", "search_jobs"],
+    "description": "Impact: remove a servicer"
+  },
+  {
+    "id": 57,
+    "pattern": "impact",
+    "prompt": "What would happen if we changed the scrubber for job CMBS_GreyCo to a different template?",
+    "expected_category": "system_admin",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["impact_analysis", "job_detail"],
+    "description": "Impact: scrubber change on a job"
+  },
+  {
+    "id": 58,
+    "pattern": "impact",
+    "prompt": "If we merge jobs TOWD_Wells_6502 and TOWD_Wells_6503, what deals would be affected?",
+    "expected_category": "system_admin",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["impact_analysis", "job_detail", "deal_lookup"],
+    "description": "Impact: job merge analysis"
+  },
+  {
+    "id": 59,
+    "pattern": "impact",
+    "prompt": "What breaks if we disable all SFTP monitoring jobs temporarily?",
+    "expected_category": "system_admin",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["impact_analysis", "search_jobs"],
+    "description": "Impact: disable SFTP monitoring"
+  },
+  {
+    "id": 60,
+    "pattern": "impact",
+    "prompt": "Simulate: what if CompanyID 150 is reassigned to a different servicer?",
+    "expected_category": "system_admin",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["impact_analysis", "deal_lookup", "servicer_dossier"],
+    "description": "Impact: servicer reassignment"
+  },
+  {
+    "id": 61,
+    "pattern": "impact",
+    "prompt": "What if we add a new deal CMLTI 2025-B under CompanyID 296? Show the current state first.",
+    "expected_category": "deal_mapping",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["deal_lookup", "servicer_dossier"],
+    "description": "Impact: adding a new deal — check existing state"
+  },
+  {
+    "id": 62,
+    "pattern": "impact",
+    "prompt": "What deals and jobs would be impacted if we change the sender email for CMLTI_Fay?",
+    "expected_category": "system_admin",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["impact_analysis", "job_detail"],
+    "description": "Impact: sender email change"
+  },
+  {
+    "id": 63,
+    "pattern": "impact",
+    "prompt": "What if we delete the keyword M70 from tblExternalDIDRef? Which jobs rely on it?",
+    "expected_category": "deal_mapping",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["deal_lookup", "search_jobs"],
+    "description": "Impact: keyword deletion"
+  },
+  {
+    "id": 64,
+    "pattern": "impact",
+    "prompt": "Rollback to the previous settings version — first show me what would change.",
+    "expected_category": "deployment",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["xml_diff", "list_backups"],
+    "description": "Impact: pre-rollback diff review"
+  },
+  {
+    "id": 65,
+    "pattern": "impact",
+    "prompt": "What if we consolidate all Wells Fargo jobs into one? Impact analysis please.",
+    "expected_category": "system_admin",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["impact_analysis", "consolidation_analysis"],
+    "description": "Impact: job consolidation scenario"
+  },
+  {
+    "id": 66,
+    "pattern": "operational",
+    "prompt": "Morning report: show today's daily summary, any failures, and DID lookup issues.",
+    "expected_category": "logs_ops",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["daily_summary", "failure_analysis", "did_failures"],
+    "description": "Operational: morning briefing"
+  },
+  {
+    "id": 67,
+    "pattern": "operational",
+    "prompt": "Give me a weekly processing trend report with performance rankings.",
+    "expected_category": "logs_ops",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["log_trends", "log_performance"],
+    "description": "Operational: weekly trend + performance"
+  },
+  {
+    "id": 68,
+    "pattern": "operational",
+    "prompt": "How did the system perform yesterday? Volumes, errors, and processing times.",
+    "expected_category": "logs_ops",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["daily_summary", "processing_duration", "failure_analysis"],
+    "description": "Operational: yesterday's performance review"
+  },
+  {
+    "id": 69,
+    "pattern": "operational",
+    "prompt": "Show me the top 5 worst performing jobs this week and their failure details.",
+    "expected_category": "logs_ops",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["log_performance", "failure_analysis"],
+    "description": "Operational: worst performing jobs detail"
+  },
+  {
+    "id": 70,
+    "pattern": "operational",
+    "prompt": "Full status report: system health, processing summary, and any pending manual queue items.",
+    "expected_category": "system_admin",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["system_health", "daily_summary", "manual_queue"],
+    "description": "Operational: full status report"
+  },
+  {
+    "id": 71,
+    "pattern": "operational",
+    "prompt": "What's the current manual queue status and which templates are most affected?",
+    "expected_category": "processing",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["manual_queue"],
+    "description": "Operational: manual queue breakdown"
+  },
+  {
+    "id": 72,
+    "pattern": "operational",
+    "prompt": "Show processing duration trends — which templates are getting slower over time?",
+    "expected_category": "processing",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["processing_duration", "log_trends"],
+    "description": "Operational: performance degradation trends"
+  },
+  {
+    "id": 73,
+    "pattern": "operational",
+    "prompt": "Compare deal activity between servicer 150 and servicer 296 over the past month.",
+    "expected_category": "deal_mapping",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["deal_lookup", "deal_activity"],
+    "description": "Operational: cross-servicer comparison"
+  },
+  {
+    "id": 74,
+    "pattern": "operational",
+    "prompt": "Daily check: sync logs, show summary, flag anything unusual.",
+    "expected_category": "logs_ops",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["sync_logs", "daily_summary"],
+    "description": "Operational: daily log sync + summary"
+  },
+  {
+    "id": 75,
+    "pattern": "operational",
+    "prompt": "Show email volume trends for the last 14 days and highlight any anomalies.",
+    "expected_category": "logs_ops",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["log_trends"],
+    "description": "Operational: volume trend analysis"
+  },
+  {
+    "id": 76,
+    "pattern": "operational",
+    "prompt": "End-of-day report: processing completed, failures, manual items, and settings changes.",
+    "expected_category": "logs_ops",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["daily_summary", "failure_analysis", "manual_queue", "xml_diff"],
+    "description": "Operational: end-of-day comprehensive report"
+  },
+  {
+    "id": 77,
+    "pattern": "operational",
+    "prompt": "Which servicers have the highest processing volume this month?",
+    "expected_category": "processing",
+    "expected_mode": "single_tool",
+    "expected_pipeline": null,
+    "expected_tools": ["processing_history", "log_performance"],
+    "description": "Operational: servicer volume ranking"
+  },
+  {
+    "id": 78,
+    "pattern": "operational",
+    "prompt": "Show me all recent deal activity for DID CMLTI 2014-A and any related failures.",
+    "expected_category": "logs_ops",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["deal_activity", "failure_analysis"],
+    "description": "Operational: deal activity + failures"
+  },
+  {
+    "id": 79,
+    "pattern": "operational",
+    "prompt": "What are the slowest templates right now and how do they compare to last week?",
+    "expected_category": "processing",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["processing_duration", "log_trends"],
+    "description": "Operational: processing duration comparison over time"
+  },
+  {
+    "id": 80,
+    "pattern": "operational",
+    "prompt": "Processing report: total files processed today, broken down by template and status.",
+    "expected_category": "processing",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["template_status", "daily_summary"],
+    "description": "Operational: daily processing breakdown by template"
+  },
+  {
+    "id": 81,
+    "pattern": "onboarding",
+    "prompt": "We just onboarded servicer 999. Verify everything is set up: job config, deal mappings, and test processing.",
+    "expected_category": "deal_mapping",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["servicer_dossier", "coverage_gaps", "template_status"],
+    "description": "Onboarding: new servicer setup verification"
+  },
+  {
+    "id": 82,
+    "pattern": "onboarding",
+    "prompt": "I just created job NEW_Servicer_Email. Verify the config is valid and the servicer has deals mapped.",
+    "expected_category": "job_config",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["job_detail", "validate_email", "coverage_gaps"],
+    "description": "Onboarding: new job config verification"
+  },
+  {
+    "id": 83,
+    "pattern": "onboarding",
+    "prompt": "Confirm that new deal BWAY 2025-A is correctly mapped and the associated job can process it.",
+    "expected_category": "deal_mapping",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["deal_lookup", "template_status"],
+    "description": "Onboarding: new deal mapping verification"
+  },
+  {
+    "id": 84,
+    "pattern": "onboarding",
+    "prompt": "After adding CompanyID 888 to tblExternalDIDRef, check if we need a new job or if an existing one covers it.",
+    "expected_category": "deal_mapping",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["deal_lookup", "coverage_gaps", "search_jobs"],
+    "description": "Onboarding: new CompanyID coverage check"
+  },
+  {
+    "id": 85,
+    "pattern": "onboarding",
+    "prompt": "New SFTP feed for servicer 777. Validate SFTP config and verify deal mappings exist.",
+    "expected_category": "job_config",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["validate_sftp", "servicer_dossier"],
+    "description": "Onboarding: new SFTP feed setup verification"
+  },
+  {
+    "id": 86,
+    "pattern": "onboarding",
+    "prompt": "Verify end-to-end that servicer 296 is properly configured and actually processing files this week.",
+    "expected_category": "deal_mapping",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["servicer_dossier", "processing_history", "template_status"],
+    "description": "Onboarding: end-to-end servicer verification"
+  },
+  {
+    "id": 87,
+    "pattern": "onboarding",
+    "prompt": "I just deployed new settings. Verify the diff looks correct and run a quick health check.",
+    "expected_category": "deployment",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["xml_diff", "system_health"],
+    "description": "Onboarding: post-deploy verification"
+  },
+  {
+    "id": 88,
+    "pattern": "onboarding",
+    "prompt": "Set up check: does job CMBS_NewCo have all required fields and is the template valid?",
+    "expected_category": "job_config",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["job_detail", "validate_email"],
+    "description": "Onboarding: job field completeness check"
+  },
+  {
+    "id": 89,
+    "pattern": "onboarding",
+    "prompt": "Check if the new keyword 'NEWDID' in tblExternalDIDRef causes any collisions with existing keywords.",
+    "expected_category": "deal_mapping",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["collision_detection", "deal_lookup"],
+    "description": "Onboarding: new keyword collision check"
+  },
+  {
+    "id": 90,
+    "pattern": "onboarding",
+    "prompt": "After creating a new job from template CMBS_GreyCo, verify it processes correctly and has all deal mappings.",
+    "expected_category": "job_config",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["job_detail", "coverage_gaps", "template_status"],
+    "description": "Onboarding: post-create job verification"
+  },
+  {
+    "id": 91,
+    "pattern": "deployment",
+    "prompt": "Validate config, check for gaps, and then deploy the email settings.",
+    "expected_category": "deployment",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["validate_email", "coverage_gaps", "save_settings"],
+    "description": "Deployment: validate → check → deploy workflow"
+  },
+  {
+    "id": 92,
+    "pattern": "deployment",
+    "prompt": "Before deploying, show me the diff and list any jobs that might be affected.",
+    "expected_category": "deployment",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["xml_diff", "search_jobs"],
+    "description": "Deployment: pre-deploy review"
+  },
+  {
+    "id": 93,
+    "pattern": "deployment",
+    "prompt": "Deploy the SFTP settings after backing up and validating the configuration.",
+    "expected_category": "deployment",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["validate_sftp", "save_settings"],
+    "description": "Deployment: validate → backup → deploy"
+  },
+  {
+    "id": 94,
+    "pattern": "deployment",
+    "prompt": "Compare the current settings with the last backup and confirm no critical changes were lost.",
+    "expected_category": "deployment",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["xml_diff", "list_backups"],
+    "description": "Deployment: diff against backup"
+  },
+  {
+    "id": 95,
+    "pattern": "deployment",
+    "prompt": "Roll back the email settings to the backup from yesterday and verify the config is valid after rollback.",
+    "expected_category": "deployment",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["rollback", "validate_email"],
+    "description": "Deployment: rollback → validate"
+  },
+  {
+    "id": 96,
+    "pattern": "deployment",
+    "prompt": "Show all available backups and the diff for each compared to current settings.",
+    "expected_category": "deployment",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["list_backups", "xml_diff"],
+    "description": "Deployment: backup inventory + diffs"
+  },
+  {
+    "id": 97,
+    "pattern": "deployment",
+    "prompt": "Validate both email and SFTP settings, then generate a deploy-readiness report.",
+    "expected_category": "deployment",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["validate_email", "validate_sftp"],
+    "description": "Deployment: dual validation"
+  },
+  {
+    "id": 98,
+    "pattern": "deployment",
+    "prompt": "After deploying, check that no processing failures spiked in the last hour.",
+    "expected_category": "deployment",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["failure_analysis", "daily_summary"],
+    "description": "Deployment: post-deploy failure monitoring"
+  },
+  {
+    "id": 99,
+    "pattern": "deployment",
+    "prompt": "Deploy workflow: list current backups, diff changes, validate, then save email settings.",
+    "expected_category": "deployment",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["list_backups", "xml_diff", "validate_email", "save_settings"],
+    "description": "Deployment: full deploy workflow"
+  },
+  {
+    "id": 100,
+    "pattern": "deployment",
+    "prompt": "Safe deploy: validate config, check there are no orphans or collisions, then save.",
+    "expected_category": "deployment",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["validate_email", "orphan_detection", "collision_detection", "save_settings"],
+    "description": "Deployment: safe deploy with integrity checks"
+  },
+  {
+    "id": 101,
+    "pattern": "single_tool",
+    "prompt": "List all CMBS jobs.",
+    "expected_category": "job_config",
+    "expected_mode": "single_tool",
+    "expected_pipeline": null,
+    "expected_tools": ["search_jobs"],
+    "description": "Single-tool: simple job search"
+  },
+  {
+    "id": 102,
+    "pattern": "single_tool",
+    "prompt": "Show me the details for job CMLTI_Fay.",
+    "expected_category": "job_config",
+    "expected_mode": "single_tool",
+    "expected_pipeline": null,
+    "expected_tools": ["job_detail"],
+    "description": "Single-tool: specific job detail"
+  },
+  {
+    "id": 103,
+    "pattern": "single_tool",
+    "prompt": "What deals are mapped to CompanyID 296?",
+    "expected_category": "deal_mapping",
+    "expected_mode": "single_tool",
+    "expected_pipeline": null,
+    "expected_tools": ["deal_lookup"],
+    "description": "Single-tool: simple deal lookup"
+  },
+  {
+    "id": 104,
+    "pattern": "single_tool",
+    "prompt": "Show today's daily summary.",
+    "expected_category": "logs_ops",
+    "expected_mode": "single_tool",
+    "expected_pipeline": null,
+    "expected_tools": ["daily_summary"],
+    "description": "Single-tool: daily summary"
+  },
+  {
+    "id": 105,
+    "pattern": "single_tool",
+    "prompt": "Template status for TPMT_SPS.",
+    "expected_category": "processing",
+    "expected_mode": "single_tool",
+    "expected_pipeline": null,
+    "expected_tools": ["template_status"],
+    "description": "Single-tool: template status check"
+  },
+  {
+    "id": 106,
+    "pattern": "single_tool",
+    "prompt": "Any DID lookup failures recently?",
+    "expected_category": "logs_ops",
+    "expected_mode": "single_tool",
+    "expected_pipeline": null,
+    "expected_tools": ["did_failures"],
+    "description": "Single-tool: DID failures"
+  },
+  {
+    "id": 107,
+    "pattern": "single_tool",
+    "prompt": "Show me the template inventory.",
+    "expected_category_any": ["job_config", "processing"],
+    "expected_category": "processing",
+    "expected_mode": "single_tool",
+    "expected_pipeline": null,
+    "expected_tools": ["templates"],
+    "description": "Single-tool: template/scrubber inventory"
+  },
+  {
+    "id": 108,
+    "pattern": "single_tool",
+    "prompt": "List all available backups.",
+    "expected_category": "deployment",
+    "expected_mode": "single_tool",
+    "expected_pipeline": null,
+    "expected_tools": ["list_backups"],
+    "description": "Single-tool: backup list"
+  },
+  {
+    "id": 109,
+    "pattern": "single_tool",
+    "prompt": "Show agent status.",
+    "expected_category": "system_admin",
+    "expected_mode": "single_tool",
+    "expected_pipeline": null,
+    "expected_tools": ["agent_status"],
+    "description": "Single-tool: agent status"
+  },
+  {
+    "id": 110,
+    "pattern": "single_tool",
+    "prompt": "Sync the log files.",
+    "expected_category": "logs_ops",
+    "expected_mode": "single_tool",
+    "expected_pipeline": null,
+    "expected_tools": ["sync_logs"],
+    "description": "Single-tool: log sync"
+  },
+  {
+    "id": 111,
+    "pattern": "single_tool",
+    "prompt": "Create a new job from CMBS_GreyCo template.",
+    "expected_category": "job_config",
+    "expected_mode": "single_tool",
+    "expected_pipeline": null,
+    "expected_tools": ["create_job"],
+    "description": "Single-tool: job creation"
+  },
+  {
+    "id": 112,
+    "pattern": "single_tool",
+    "prompt": "Change the sender for job CMLTI_Fay to reports@newfay.com.",
+    "expected_category": "job_config",
+    "expected_mode": "single_tool",
+    "expected_pipeline": null,
+    "expected_tools": ["edit_job"],
+    "description": "Single-tool: job edit"
+  },
+  {
+    "id": 113,
+    "pattern": "single_tool",
+    "prompt": "Save the email settings.",
+    "expected_category": "deployment",
+    "expected_mode": "single_tool",
+    "expected_pipeline": null,
+    "expected_tools": ["save_settings"],
+    "description": "Single-tool: save settings"
+  },
+  {
+    "id": 114,
+    "pattern": "single_tool",
+    "prompt": "What changed since the last deploy?",
+    "expected_category": "deployment",
+    "expected_mode": "single_tool",
+    "expected_pipeline": null,
+    "expected_tools": ["xml_diff"],
+    "description": "Single-tool: settings diff"
+  },
+  {
+    "id": 115,
+    "pattern": "single_tool",
+    "prompt": "Show me the dossier for servicer 150.",
+    "expected_category": "system_admin",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["servicer_dossier"],
+    "description": "Single-tool: servicer dossier"
+  },
+  {
+    "id": 116,
+    "pattern": "single_tool",
+    "prompt": "Detect orphaned jobs.",
+    "expected_category": "system_admin",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["orphan_detection"],
+    "description": "Single-tool: orphan detection"
+  },
+  {
+    "id": 117,
+    "pattern": "single_tool",
+    "prompt": "Check for ImportDID collisions.",
+    "expected_category": "deal_mapping",
+    "expected_mode": "single_tool",
+    "expected_pipeline": null,
+    "expected_tools": ["collision_detection"],
+    "description": "Single-tool: collision detection"
+  },
+  {
+    "id": 118,
+    "pattern": "single_tool",
+    "prompt": "Show processing history for servicer 296.",
+    "expected_category": "processing",
+    "expected_mode": "single_tool",
+    "expected_pipeline": null,
+    "expected_tools": ["processing_history"],
+    "description": "Single-tool: processing history"
+  },
+  {
+    "id": 119,
+    "pattern": "single_tool",
+    "prompt": "What templates are failing?",
+    "expected_category": "processing",
+    "expected_mode": "single_tool",
+    "expected_pipeline": null,
+    "expected_tools": ["failure_analysis"],
+    "description": "Single-tool: failure analysis"
+  },
+  {
+    "id": 120,
+    "pattern": "single_tool",
+    "prompt": "Trace where file M:\\Data\\report.xlsx came from.",
+    "expected_category": "processing",
+    "expected_mode": "pipeline",
+    "expected_pipeline": null,
+    "expected_tools": ["source_trace"],
+    "description": "Single-tool: file source trace"
+  }
+]

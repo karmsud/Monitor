@@ -1,0 +1,238 @@
+{
+  "name": "frp-agent-extension",
+  "displayName": "FRP Agent",
+  "description": "VS Code Chat Agent for File Reception Portal - manage email/SFTP monitoring jobs, deal coverage, and application logs.",
+  "version": "0.1.1",
+  "publisher": "your-publisher-id",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "main": "./extension.js",
+  "activationEvents": [
+    "onStartupFinished",
+    "onChatParticipant:frp-agent.assistant"
+  ],
+  "contributes": {
+    "chatParticipants": [
+      {
+        "id": "frp-agent.assistant",
+        "name": "frp",
+        "fullName": "FRP Agent",
+        "description": "Manage email and SFTP monitoring jobs, query deal coverage, analyze logs, and deploy Settings.xml changes.",
+        "isSticky": true,
+        "commands": [
+          {
+            "name": "sync_logs",
+            "description": "Explicitly sync application logs on demand"
+          },
+          {
+            "name": "jobs",
+            "description": "Search, filter, and validate email/SFTP monitoring jobs"
+          },
+          {
+            "name": "jobXML",
+            "description": "Legacy deterministic email lookup using Settings.xml"
+          },
+          {
+            "name": "jobSQLite",
+            "description": "Legacy deterministic email lookup using the SQLite cache"
+          },
+          {
+            "name": "jobXMLEmail",
+            "description": "Deterministic email job lookup using Settings.xml"
+          },
+          {
+            "name": "jobSQLiteEmail",
+            "description": "Deterministic email job lookup using the SQLite cache"
+          },
+          {
+            "name": "jobXMLSftp",
+            "description": "Deterministic SFTP job lookup using Settings.xml"
+          },
+          {
+            "name": "jobSQLiteSftp",
+            "description": "Deterministic SFTP job lookup using the SQLite cache"
+          },
+          {
+            "name": "deals",
+            "description": "Query deal coverage, servicer dossiers, and DID mappings"
+          },
+          {
+            "name": "logs",
+            "description": "Sync and query application logs"
+          },
+          {
+            "name": "deploy",
+            "description": "Save Settings.xml, manage backups, list restore points"
+          },
+          {
+            "name": "clone",
+            "description": "Deterministically clone a job by ServicerID with per-tag editing and XML preview"
+          },
+          {
+            "name": "triage",
+            "description": "Triage incoming emails against job configurations (Phase 3)"
+          },
+          {
+            "name": "analyze",
+            "description": "Advanced analysis: trends, health checks, consolidation (Phase 4)"
+          },
+          {
+            "name": "staging",
+            "description": "Template staging: processing status, failures, durations, pipeline view (Phase 5)"
+          },
+          {
+            "name": "testbench",
+            "description": "Run classifier test bench against golden test cases (Phase 8)"
+          },
+          {
+            "name": "rebuild-db",
+            "description": "Rebuild the SQLite job-config cache from Settings.xml (email + SFTP)"
+          }
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "command": "frp-agent.syncLogs",
+        "title": "FRP Agent: Sync Logs"
+      },
+      {
+        "command": "frp-agent.status",
+        "title": "FRP Agent: Status"
+      },
+      {
+        "command": "frp.confirmPending",
+        "title": "FRP Agent: Confirm Pending Operation"
+      },
+      {
+        "command": "frp.cancelPending",
+        "title": "FRP Agent: Cancel Pending Operation"
+      },
+      {
+        "command": "frp.runInlineChatAction",
+        "title": "FRP Agent: Run Inline Chat Action"
+      }
+    ],
+    "configuration": {
+      "title": "FRP Agent",
+      "properties": {
+        "frpAgent.prod": {
+          "type": "boolean",
+          "default": false,
+          "order": 1,
+          "description": "Database mode. true = MSSQL production, false = MySQL local development."
+        },
+        "frpAgent.mssqlServer": {
+          "type": "string",
+          "default": "",
+          "order": 2,
+          "description": "MSSQL server name (e.g. VMCKSA69901M0VX.us-bank-dns.com,49001). Required when Prod mode is enabled."
+        },
+        "frpAgent.mssqlDatabase": {
+          "type": "string",
+          "default": "",
+          "order": 3,
+          "description": "MSSQL database name (e.g. Servicing). Required when Prod mode is enabled."
+        },
+        "frpAgent.outlookSettingsPath": {
+          "type": "string",
+          "default": "",
+          "order": 4,
+          "description": "Absolute path to the email monitoring Settings.xml file."
+        },
+        "frpAgent.sftpSettingsPath": {
+          "type": "string",
+          "default": "",
+          "order": 5,
+          "description": "Absolute path to the SFTP monitoring Settings.xml file."
+        },
+        "frpAgent.emailLogFolder": {
+          "type": "string",
+          "default": "",
+          "order": 6,
+          "description": "Folder containing EmailMonitor log files."
+        },
+        "frpAgent.sftpLogFolder": {
+          "type": "string",
+          "default": "",
+          "order": 7,
+          "description": "Folder containing SFTP monitor log files."
+        },
+        "frpAgent.logRetentionMonths": {
+          "type": "number",
+          "default": 3,
+          "order": 8,
+          "description": "Months of log data to retain in the SQLite index."
+        },
+        "frpAgent.logDbPath": {
+          "type": "string",
+          "default": "",
+          "order": 9,
+          "description": "Absolute path to the shared SQLite log-index database (e.g. \\\\server\\share\\frp_logs.db). Must be set for log analytics."
+        },
+        "frpAgent.logLevel": {
+          "type": "string",
+          "default": "normal",
+          "enum": [
+            "normal",
+            "verbose"
+          ],
+          "order": 10,
+          "description": "Output panel logging detail."
+        },
+        "frpAgent.model": {
+          "type": "string",
+          "default": "auto",
+          "enum": [
+            "auto",
+            "gpt-4.1",
+            "gpt-4o",
+            "gpt-4o-mini",
+            "claude-sonnet-4"
+          ],
+          "enumDescriptions": [
+            "Use your active Copilot model (recommended)",
+            "GPT-4.1 - strongest reasoning, 1M context",
+            "GPT-4o - balanced quality and speed",
+            "GPT-4o Mini - fast and lightweight",
+            "Claude Sonnet 4 - strong analysis"
+          ],
+          "order": 11,
+          "description": "LLM for response generation. 'auto' uses your active Copilot model."
+        },
+        "frpAgent.cacheDbPath": {
+          "type": "string",
+          "default": "",
+          "order": 12,
+          "description": "Absolute path to the SQLite job-config cache database. Enables fast search/detail queries over Settings.xml. Run 'frp xml rebuild-db' to populate."
+        },
+        "frpAgent.enableDeterministicJobExperiment": {
+          "type": "boolean",
+          "default": false,
+          "order": 13,
+          "description": "Enable deterministic slash commands for direct email and SFTP job lookup without LLM generation, including /jobXMLEmail, /jobSQLiteEmail, /jobXMLSftp, /jobSQLiteSftp, plus legacy email aliases /jobXML and /jobSQLite."
+        },
+        "frpAgent.backendMode": {
+          "type": "string",
+          "default": "auto",
+          "enum": [
+            "auto",
+            "venv",
+            "exe"
+          ],
+          "order": 100,
+          "markdownDescription": "**[Developer]** Backend execution: 'auto' (prefer exe), 'venv' (live Python), 'exe' (compiled)."
+        }
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/vscode": "^1.95.0",
+    "@vscode/test-electron": "^2.5.2",
+    "glob": "^13.0.6",
+    "mocha": "^11.7.5"
+  }
+}

@@ -1,0 +1,275 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1200" viewBox="0 0 1920 1200">
+<defs>
+<marker id="arr-det" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/></marker>
+<marker id="arr-nlp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#059669"/></marker>
+<marker id="arr-data" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7C3AED"/></marker>
+<marker id="arr-shared" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/></marker>
+<filter id="nodeShadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+</defs>
+<rect width="1920" height="1200" fill="#FFFFFF"/>
+<rect x="40" y="15" width="1840" height="55" rx="6" fill="#0F172A"/>
+<text x="960" y="38" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="22" font-weight="700">Use Case: /triage — Email Triage &amp; Job Matching</text>
+<text x="960" y="56" text-anchor="middle" fill="#94A3B8" font-family="Helvetica,Arial,sans-serif" font-size="12">Multi-loop pipeline from .msg email to confidence-scored match results</text>
+<rect x="40" y="85" width="1260" height="300" rx="12" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="10 5"/>
+<rect x="54" y="74" width="126.0" height="22" rx="4" fill="#1E293B"/>
+<text x="117.0" y="89" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">VS Code Process</text>
+<rect x="1224.8" y="74" width="61.2" height="22" rx="4" fill="#3B82F6"/>
+<text x="1255.4" y="89" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">Client</text>
+<rect x="40" y="430" width="1260" height="540" rx="12" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="10 5"/>
+<rect x="54" y="419" width="118.8" height="22" rx="4" fill="#1E293B"/>
+<text x="113.4" y="434" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">Python Backend</text>
+<rect x="1224.8" y="419" width="61.2" height="22" rx="4" fill="#F59E0B"/>
+<text x="1255.4" y="434" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">Server</text>
+<rect x="40" y="990" width="1260" height="145" rx="12" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="10 5"/>
+<rect x="54" y="979" width="140.4" height="22" rx="4" fill="#1E293B"/>
+<text x="124.2" y="994" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">Persistent Stores</text>
+<rect x="1239.2" y="979" width="46.8" height="22" rx="4" fill="#8B5CF6"/>
+<text x="1262.6" y="994" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">Data</text>
+<rect x="80" y="468" width="1180" height="490" rx="8" fill="#F0F4F8" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="6 3"/>
+<text x="92" y="484" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="600">Triage Pipeline</text>
+<line x1="80" y1="408" x2="1260" y2="408" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4 3"/>
+<rect x="541.0" y="397" width="258.0" height="22" rx="4" fill="white" stroke="#94A3B8" stroke-width="1"/>
+<text x="670.0" y="412" text-anchor="middle" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="600">JSON Line Transport (stdin / stdout)</text>
+<rect x="90" y="570" width="1160" height="105" rx="8" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.2" stroke-opacity="0.5"/>
+<rect x="90" y="570" width="4" height="105" rx="2" fill="#2563EB"/>
+<rect x="102" y="576" width="140" height="18" rx="3" fill="#2563EB" opacity="0.9"/>
+<text x="172" y="589" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="9" font-weight="600">⟳ Loop 1 — Job Match</text>
+<text x="250" y="589" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="9" font-style="italic">for each job in Settings.xml</text>
+<rect x="90" y="700" width="1160" height="110" rx="8" fill="#F5F3FF" stroke="#7C3AED" stroke-width="1.2" stroke-opacity="0.5"/>
+<rect x="90" y="700" width="4" height="110" rx="2" fill="#7C3AED"/>
+<rect x="102" y="706" width="140" height="18" rx="3" fill="#7C3AED" opacity="0.9"/>
+<text x="172" y="719" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="9" font-weight="600">⟳ Loop 2 — DID Match</text>
+<text x="250" y="719" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="9" font-style="italic">for each deal under best-match ServicerID</text>
+<rect x="560" y="715" width="310" height="82" rx="8" fill="#FDF2F8" stroke="#EC4899" stroke-width="1.2" stroke-opacity="0.5"/>
+<rect x="560" y="715" width="4" height="82" rx="2" fill="#EC4899"/>
+<rect x="572" y="721" width="171" height="18" rx="3" fill="#EC4899" opacity="0.9"/>
+<text x="658" y="734" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="9" font-weight="600">⟳ Nested — per attachment</text>
+<text x="751" y="734" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="9" font-style="italic">filename keyword scan</text>
+<circle cx="131" cy="217" r="25" fill="black" opacity="0.07"/>
+<circle cx="130" cy="215" r="24" fill="#3B82F6" filter="url(#nodeShadow)"/>
+<g transform="translate(118,203)"><circle cx="12" cy="8" r="4" fill="white"/><path d="M4 21v-1c0-2.8 3.6-5 8-5s8 2.2 8 5v1z" fill="white"/></g>
+<text x="130" y="253" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">Operator</text>
+<circle cx="301" cy="217" r="25" fill="black" opacity="0.07"/>
+<circle cx="300" cy="215" r="24" fill="#3B82F6" filter="url(#nodeShadow)"/>
+<g transform="translate(288,203)"><path d="M2 5c0-1 1-2 2-2h16c1 0 2 1 2 2v10c0 1-1 2-2 2H7l-5 4z" fill="white"/></g>
+<text x="300" y="253" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">Copilot Chat</text>
+<text x="300" y="267" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400">@frp</text>
+<circle cx="491" cy="217" r="25" fill="black" opacity="0.07"/>
+<circle cx="490" cy="215" r="24" fill="#10B981" filter="url(#nodeShadow)"/>
+<g transform="translate(478,203)"><circle cx="12" cy="12" r="4" fill="none" stroke="white" stroke-width="2.2"/><rect x="10.8" y="1.5" width="2.4" height="4" rx=".8" fill="white"/><rect x="10.8" y="18.5" width="2.4" height="4" rx=".8" fill="white"/><rect x="1.5" y="10.8" width="4" height="2.4" rx=".8" fill="white"/><rect x="18.5" y="10.8" width="4" height="2.4" rx=".8" fill="white"/></g>
+<text x="490" y="253" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">participant.js</text>
+<text x="490" y="267" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400">parse + route</text>
+<circle cx="701" cy="152" r="25" fill="black" opacity="0.07"/>
+<circle cx="700" cy="150" r="24" fill="#10B981" filter="url(#nodeShadow)"/>
+<g transform="translate(688,138)"><rect x="5" y="2" width="14" height="20" rx="1.5" fill="none" stroke="white" stroke-width="1.5"/><line x1="8" y1="8" x2="16" y2="8" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="11.5" x2="16" y2="11.5" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="15" x2="13" y2="15" stroke="white" stroke-width="1.2" stroke-linecap="round"/></g>
+<text x="700" y="188" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">parseTriage</text>
+<text x="700" y="202" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400">Prompt()</text>
+<circle cx="701" cy="300" r="25" fill="black" opacity="0.07"/>
+<circle cx="700" cy="298" r="24" fill="#EC4899" filter="url(#nodeShadow)"/>
+<text x="700" y="303" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700">AI</text>
+<text x="700" y="336" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">agentLoop</text>
+<text x="700" y="350" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400">email_triage</text>
+<circle cx="921" cy="217" r="25" fill="black" opacity="0.07"/>
+<circle cx="920" cy="215" r="24" fill="#10B981" filter="url(#nodeShadow)"/>
+<g transform="translate(908,203)"><line x1="4" y1="9" x2="20" y2="9" stroke="white" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="15" x2="20" y2="15" stroke="white" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="9" r="2.5" fill="white"/><circle cx="15" cy="15" r="2.5" fill="white"/></g>
+<text x="920" y="253" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">tool.js</text>
+<text x="920" y="267" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400">inject config</text>
+<circle cx="1141" cy="217" r="25" fill="black" opacity="0.07"/>
+<circle cx="1140" cy="215" r="24" fill="#F59E0B" filter="url(#nodeShadow)"/>
+<g transform="translate(1128,203)"><rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="white" stroke-width="1.8"/><path d="M6 10l3 2-3 2" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="14" x2="17" y2="14" stroke="white" stroke-width="1.8" stroke-linecap="round"/></g>
+<text x="1140" y="253" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">frp_backend.js</text>
+<text x="1140" y="267" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400">process bridge</text>
+<circle cx="151" cy="507" r="25" fill="black" opacity="0.07"/>
+<circle cx="150" cy="505" r="24" fill="#F59E0B" filter="url(#nodeShadow)"/>
+<text x="150" y="510" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700">Py</text>
+<text x="150" y="543" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">cli/main.py</text>
+<text x="150" y="557" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400">--server</text>
+<circle cx="301" cy="507" r="25" fill="black" opacity="0.07"/>
+<circle cx="300" cy="505" r="24" fill="#F59E0B" filter="url(#nodeShadow)"/>
+<g transform="translate(288,493)"><path d="M12 3l9 9-9 9-9-9z" fill="none" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="2" fill="white"/></g>
+<text x="300" y="543" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">DISPATCH</text>
+<text x="300" y="557" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400">triage_verify</text>
+<circle cx="476" cy="507" r="25" fill="black" opacity="0.07"/>
+<circle cx="475" cy="505" r="24" fill="#10B981" filter="url(#nodeShadow)"/>
+<g transform="translate(463,493)"><rect x="5" y="2" width="14" height="20" rx="1.5" fill="none" stroke="white" stroke-width="1.5"/><line x1="8" y1="8" x2="16" y2="8" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="11.5" x2="16" y2="11.5" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="15" x2="13" y2="15" stroke="white" stroke-width="1.2" stroke-linecap="round"/></g>
+<text x="475" y="543" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">MsgParser</text>
+<text x="475" y="557" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400">.msg → EmailInfo</text>
+<circle cx="221" cy="620" r="25" fill="black" opacity="0.07"/>
+<circle cx="220" cy="618" r="24" fill="#10B981" filter="url(#nodeShadow)"/>
+<g transform="translate(208,606)"><circle cx="12" cy="12" r="4" fill="none" stroke="white" stroke-width="2.2"/><rect x="10.8" y="1.5" width="2.4" height="4" rx=".8" fill="white"/><rect x="10.8" y="18.5" width="2.4" height="4" rx=".8" fill="white"/><rect x="1.5" y="10.8" width="4" height="2.4" rx=".8" fill="white"/><rect x="18.5" y="10.8" width="4" height="2.4" rx=".8" fill="white"/></g>
+<text x="220" y="656" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">TriageMatcher</text>
+<text x="220" y="670" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400">.match()</text>
+<circle cx="471" cy="620" r="25" fill="black" opacity="0.07"/>
+<circle cx="470" cy="618" r="24" fill="#10B981" filter="url(#nodeShadow)"/>
+<g transform="translate(458,606)"><line x1="4" y1="9" x2="20" y2="9" stroke="white" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="15" x2="20" y2="15" stroke="white" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="9" r="2.5" fill="white"/><circle cx="15" cy="15" r="2.5" fill="white"/></g>
+<text x="470" y="656" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">_check_job()</text>
+<text x="470" y="670" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400">sender|mailbox|subj</text>
+<circle cx="731" cy="620" r="25" fill="black" opacity="0.07"/>
+<circle cx="730" cy="618" r="24" fill="#10B981" filter="url(#nodeShadow)"/>
+<g transform="translate(718,606)"><rect x="5" y="2" width="14" height="20" rx="1.5" fill="none" stroke="white" stroke-width="1.5"/><line x1="8" y1="8" x2="16" y2="8" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="11.5" x2="16" y2="11.5" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="15" x2="13" y2="15" stroke="white" stroke-width="1.2" stroke-linecap="round"/></g>
+<text x="730" y="656" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">score &amp; rank</text>
+<text x="730" y="670" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400">MatchResult[]</text>
+<circle cx="221" cy="752" r="25" fill="black" opacity="0.07"/>
+<circle cx="220" cy="750" r="24" fill="#8B5CF6" filter="url(#nodeShadow)"/>
+<g transform="translate(208,738)"><ellipse cx="12" cy="7" rx="7.5" ry="3" fill="none" stroke="white" stroke-width="1.8"/><path d="M4.5 7v10c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V7" fill="none" stroke="white" stroke-width="1.8"/><path d="M4.5 12.5c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3" fill="none" stroke="white" stroke-width="1.5"/></g>
+<text x="220" y="788" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">deal_repo</text>
+<text x="220" y="802" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400">get_deals(sid)</text>
+<circle cx="441" cy="752" r="25" fill="black" opacity="0.07"/>
+<circle cx="440" cy="750" r="24" fill="#10B981" filter="url(#nodeShadow)"/>
+<g transform="translate(428,738)"><rect x="5" y="2" width="14" height="20" rx="1.5" fill="none" stroke="white" stroke-width="1.5"/><line x1="8" y1="8" x2="16" y2="8" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="11.5" x2="16" y2="11.5" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="15" x2="13" y2="15" stroke="white" stroke-width="1.2" stroke-linecap="round"/></g>
+<text x="440" y="788" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">keyword in</text>
+<text x="440" y="802" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400">subject</text>
+<circle cx="701" cy="752" r="25" fill="black" opacity="0.07"/>
+<circle cx="700" cy="750" r="24" fill="#10B981" filter="url(#nodeShadow)"/>
+<g transform="translate(688,738)"><path d="M2 7.5c0-.8.7-1.5 1.5-1.5H9l2-2h9.5c.8 0 1.5.7 1.5 1.5v13c0 .8-.7 1.5-1.5 1.5h-17c-.8 0-1.5-.7-1.5-1.5z" fill="white"/></g>
+<text x="700" y="788" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">keyword in</text>
+<text x="700" y="802" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400">filenames</text>
+<circle cx="961" cy="752" r="25" fill="black" opacity="0.07"/>
+<circle cx="960" cy="750" r="24" fill="#10B981" filter="url(#nodeShadow)"/>
+<g transform="translate(948,738)"><rect x="5" y="2" width="14" height="20" rx="1.5" fill="none" stroke="white" stroke-width="1.5"/><line x1="8" y1="8" x2="16" y2="8" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="11.5" x2="16" y2="11.5" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="15" x2="13" y2="15" stroke="white" stroke-width="1.2" stroke-linecap="round"/></g>
+<text x="960" y="788" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">DIDMatch[]</text>
+<text x="960" y="802" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400">hit list</text>
+<circle cx="221" cy="862" r="25" fill="black" opacity="0.07"/>
+<circle cx="220" cy="860" r="24" fill="#8B5CF6" filter="url(#nodeShadow)"/>
+<g transform="translate(208,848)"><ellipse cx="12" cy="7" rx="7.5" ry="3" fill="none" stroke="white" stroke-width="1.8"/><path d="M4.5 7v10c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V7" fill="none" stroke="white" stroke-width="1.8"/><path d="M4.5 12.5c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3" fill="none" stroke="white" stroke-width="1.5"/></g>
+<text x="220" y="898" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">log cross-</text>
+<text x="220" y="912" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400">reference</text>
+<circle cx="441" cy="862" r="25" fill="black" opacity="0.07"/>
+<circle cx="440" cy="860" r="24" fill="#8B5CF6" filter="url(#nodeShadow)"/>
+<g transform="translate(428,848)"><ellipse cx="12" cy="7" rx="7.5" ry="3" fill="none" stroke="white" stroke-width="1.8"/><path d="M4.5 7v10c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V7" fill="none" stroke="white" stroke-width="1.8"/><path d="M4.5 12.5c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3" fill="none" stroke="white" stroke-width="1.5"/></g>
+<text x="440" y="898" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">template staging</text>
+<text x="440" y="912" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400">lookup</text>
+<circle cx="681" cy="862" r="25" fill="black" opacity="0.07"/>
+<circle cx="680" cy="860" r="24" fill="#10B981" filter="url(#nodeShadow)"/>
+<g transform="translate(668,848)"><circle cx="12" cy="12" r="4" fill="none" stroke="white" stroke-width="2.2"/><rect x="10.8" y="1.5" width="2.4" height="4" rx=".8" fill="white"/><rect x="10.8" y="18.5" width="2.4" height="4" rx=".8" fill="white"/><rect x="1.5" y="10.8" width="4" height="2.4" rx=".8" fill="white"/><rect x="18.5" y="10.8" width="4" height="2.4" rx=".8" fill="white"/></g>
+<text x="680" y="898" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">confidence</text>
+<text x="680" y="912" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400">assessment</text>
+<circle cx="141" cy="1062" r="25" fill="black" opacity="0.07"/>
+<circle cx="140" cy="1060" r="24" fill="#8B5CF6" filter="url(#nodeShadow)"/>
+<g transform="translate(128,1048)"><path d="M2 7.5c0-.8.7-1.5 1.5-1.5H9l2-2h9.5c.8 0 1.5.7 1.5 1.5v13c0 .8-.7 1.5-1.5 1.5h-17c-.8 0-1.5-.7-1.5-1.5z" fill="white"/></g>
+<text x="140" y="1098" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">Settings.xml</text>
+<text x="140" y="1112" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400">job definitions</text>
+<circle cx="351" cy="1062" r="25" fill="black" opacity="0.07"/>
+<circle cx="350" cy="1060" r="24" fill="#8B5CF6" filter="url(#nodeShadow)"/>
+<g transform="translate(338,1048)"><rect x="5" y="2" width="14" height="20" rx="1.5" fill="none" stroke="white" stroke-width="1.5"/><line x1="8" y1="8" x2="16" y2="8" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="11.5" x2="16" y2="11.5" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="15" x2="13" y2="15" stroke="white" stroke-width="1.2" stroke-linecap="round"/></g>
+<text x="350" y="1098" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">.msg files</text>
+<text x="350" y="1112" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400">email source</text>
+<circle cx="561" cy="1062" r="25" fill="black" opacity="0.07"/>
+<circle cx="560" cy="1060" r="24" fill="#8B5CF6" filter="url(#nodeShadow)"/>
+<g transform="translate(548,1048)"><ellipse cx="12" cy="7" rx="7.5" ry="3" fill="none" stroke="white" stroke-width="1.8"/><path d="M4.5 7v10c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V7" fill="none" stroke="white" stroke-width="1.8"/><path d="M4.5 12.5c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3" fill="none" stroke="white" stroke-width="1.5"/></g>
+<text x="560" y="1098" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">tblExternalDIDRef</text>
+<text x="560" y="1112" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400">deal mappings</text>
+<circle cx="771" cy="1062" r="25" fill="black" opacity="0.07"/>
+<circle cx="770" cy="1060" r="24" fill="#8B5CF6" filter="url(#nodeShadow)"/>
+<g transform="translate(758,1048)"><ellipse cx="12" cy="7" rx="7.5" ry="3" fill="none" stroke="white" stroke-width="1.8"/><path d="M4.5 7v10c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V7" fill="none" stroke="white" stroke-width="1.8"/><path d="M4.5 12.5c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3" fill="none" stroke="white" stroke-width="1.5"/></g>
+<text x="770" y="1098" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">SQLite</text>
+<text x="770" y="1112" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400">log index</text>
+<circle cx="981" cy="1062" r="25" fill="black" opacity="0.07"/>
+<circle cx="980" cy="1060" r="24" fill="#8B5CF6" filter="url(#nodeShadow)"/>
+<g transform="translate(968,1048)"><ellipse cx="12" cy="7" rx="7.5" ry="3" fill="none" stroke="white" stroke-width="1.8"/><path d="M4.5 7v10c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V7" fill="none" stroke="white" stroke-width="1.8"/><path d="M4.5 12.5c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3" fill="none" stroke="white" stroke-width="1.5"/></g>
+<text x="980" y="1098" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">tblTemplate</text>
+<text x="980" y="1112" text-anchor="middle" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400">Staging</text>
+<path d="M 154 215 L 276 215" fill="none" stroke="#2563EB" stroke-width="2" marker-end="url(#arr-det)"/>
+<circle cx="215.0" cy="215.0" r="11" fill="#2563EB"/><text x="215.0" y="219.0" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700">1</text>
+<path d="M 324 215 L 466 215" fill="none" stroke="#2563EB" stroke-width="2" marker-end="url(#arr-det)"/>
+<circle cx="395.0" cy="215.0" r="11" fill="#2563EB"/><text x="395.0" y="219.0" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700">2</text>
+<path d="M 514 215 L 597 215 L 597 150 L 676 150" fill="none" stroke="#2563EB" stroke-width="2" marker-end="url(#arr-det)"/>
+<circle cx="597.0" cy="184.5" r="11" fill="#2563EB"/><text x="597.0" y="188.5" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700">3</text>
+<path d="M 724 150 L 813 150 L 813 215 L 896 215" fill="none" stroke="#2563EB" stroke-width="2" marker-end="url(#arr-det)"/>
+<circle cx="813.0" cy="179.5" r="11" fill="#2563EB"/><text x="813.0" y="183.5" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700">4</text>
+<path d="M 944 215 L 1116 215" fill="none" stroke="#2563EB" stroke-width="2" marker-end="url(#arr-det)"/>
+<circle cx="1030.0" cy="215.0" r="11" fill="#2563EB"/><text x="1030.0" y="219.0" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700">5</text>
+<path d="M 1140 239 L 1140 408 L 150 408 L 150 481" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arr-shared)"/>
+<circle cx="1140" cy="323" r="11" fill="#475569"/><text x="1140" y="327" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700">6</text>
+<path d="M 174 505 L 276 505" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arr-shared)"/>
+<circle cx="225.0" cy="505.0" r="11" fill="#475569"/><text x="225.0" y="509.0" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700">7</text>
+<path d="M 324 505 L 451 505" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arr-shared)"/>
+<circle cx="387.5" cy="505.0" r="11" fill="#475569"/><text x="387.5" y="509.0" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700">8</text>
+<path d="M 475 529 L 475 555 L 220 555 L 220 594" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arr-shared)"/>
+<circle cx="350" cy="555" r="11" fill="#475569"/><text x="350" y="559" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700">9</text>
+<path d="M 244 618 L 446 618" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arr-shared)"/>
+<path d="M 494 618 L 706 618" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arr-shared)"/>
+<path d="M 730 642 L 730 680 L 220 680 L 220 726" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arr-shared)"/>
+<circle cx="475" cy="680" r="11" fill="#475569"/><text x="475" y="684" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700">10</text>
+<path d="M 244 750 L 416 750" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arr-shared)"/>
+<path d="M 464 750 L 676 750" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arr-shared)"/>
+<path d="M 724 750 L 936 750" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arr-shared)"/>
+<path d="M 960 774 L 960 838 L 244 838" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arr-shared)"/>
+<circle cx="960" cy="810" r="11" fill="#475569"/><text x="960" y="814" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700">11</text>
+<path d="M 244 860 L 416 860" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arr-shared)"/>
+<path d="M 464 860 L 656 860" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arr-shared)"/>
+<path d="M 514 215 L 597 215 L 597 298 L 676 298" fill="none" stroke="#059669" stroke-width="2" marker-end="url(#arr-nlp)"/>
+<path d="M 724 298 L 813 298 L 813 215 L 896 215" fill="none" stroke="#059669" stroke-width="2" marker-end="url(#arr-nlp)"/>
+<path d="M 140 1036 L 140 975" fill="none" stroke="#7C3AED" stroke-width="2" marker-end="url(#arr-data)" stroke-dasharray="6 4"/>
+<path d="M 350 1036 L 350 975" fill="none" stroke="#7C3AED" stroke-width="2" marker-end="url(#arr-data)" stroke-dasharray="6 4"/>
+<path d="M 560 1036 L 560 975" fill="none" stroke="#7C3AED" stroke-width="2" marker-end="url(#arr-data)" stroke-dasharray="6 4"/>
+<path d="M 770 1036 L 770 975" fill="none" stroke="#7C3AED" stroke-width="2" marker-end="url(#arr-data)" stroke-dasharray="6 4"/>
+<path d="M 980 1036 L 980 975" fill="none" stroke="#7C3AED" stroke-width="2" marker-end="url(#arr-data)" stroke-dasharray="6 4"/>
+<rect x="1370" y="85" width="510" height="280" rx="8" fill="white" stroke="#CBD5E1" stroke-width="1.2"/>
+<text x="1384" y="107" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700">Legend</text>
+<line x1="1384" y1="115" x2="1866" y2="115" stroke="#CBD5E1" stroke-width="0.5"/>
+<line x1="1388" y1="137" x2="1430" y2="137" stroke="#2563EB" stroke-width="2.5"/>
+<circle cx="1430" cy="137" r="4" fill="#2563EB"/>
+<text x="1442" y="141" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11">Deterministic path (①–⑪)</text>
+<line x1="1388" y1="167" x2="1430" y2="167" stroke="#059669" stroke-width="2.5"/>
+<circle cx="1430" cy="167" r="4" fill="#059669"/>
+<text x="1442" y="171" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11">NLP / LLM tool-call path</text>
+<line x1="1388" y1="197" x2="1430" y2="197" stroke="#7C3AED" stroke-width="2.5" stroke-dasharray="6 4"/>
+<circle cx="1430" cy="197" r="4" fill="#7C3AED"/>
+<text x="1442" y="201" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11">Data store access</text>
+<line x1="1388" y1="227" x2="1430" y2="227" stroke="#475569" stroke-width="2.5"/>
+<circle cx="1430" cy="227" r="4" fill="#475569"/>
+<text x="1442" y="231" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11">Shared transport</text>
+<circle cx="1398" cy="262" r="7" fill="#3B82F6"/>
+<text x="1412" y="266" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="10">User-facing / UI</text>
+<circle cx="1398" cy="284" r="7" fill="#10B981"/>
+<text x="1412" y="288" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="10">Processing / routing</text>
+<circle cx="1398" cy="306" r="7" fill="#F59E0B"/>
+<text x="1412" y="310" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="10">Backend / CLI</text>
+<circle cx="1398" cy="328" r="7" fill="#8B5CF6"/>
+<text x="1412" y="332" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="10">Data store</text>
+<circle cx="1398" cy="350" r="7" fill="#EC4899"/>
+<text x="1412" y="354" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="10">AI / LLM</text>
+<rect x="1370" y="380" width="510" height="220" rx="8" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1.2"/>
+<text x="1384" y="400" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700">Triage modes</text>
+<text x="1384" y="418" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">/triage verify &quot;report.msg&quot;</text>
+<text x="1384" y="433" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">  → parse .msg → match jobs → DID lookup → log xref</text>
+<text x="1384" y="448" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5"></text>
+<text x="1384" y="463" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">/triage match sender:x@fay.com; subject:Monthly</text>
+<text x="1384" y="478" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">  → match against all jobs without .msg file</text>
+<text x="1384" y="493" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5"></text>
+<text x="1384" y="508" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">/triage new &quot;unknown.msg&quot;</text>
+<text x="1384" y="523" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">  → no match → suggest parser + template + clone</text>
+<text x="1384" y="538" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5"></text>
+<text x="1384" y="553" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">NLP: &quot;Is this email already monitored?&quot;</text>
+<text x="1384" y="568" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">  → agentLoop → triage_verify tool</text>
+<rect x="1370" y="615" width="510" height="250" rx="8" fill="#F0F9FF" stroke="#3B82F6" stroke-width="1.2"/>
+<text x="1384" y="635" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700">Loop detail</text>
+<text x="1384" y="653" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">Loop 1 — Job Match</text>
+<text x="1384" y="668" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">  N = all jobs in Settings.xml</text>
+<text x="1384" y="683" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">  Per job: check sender, mailbox, subject filters</text>
+<text x="1384" y="698" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">  Output: MatchResult[] ranked by type + confidence</text>
+<text x="1384" y="713" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5"></text>
+<text x="1384" y="728" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">Loop 2 — DID Match (best match ServicerID)</text>
+<text x="1384" y="743" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">  N = deals from tblExternalDIDRef</text>
+<text x="1384" y="758" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">  Per deal: keyword vs subject, then per-attachment</text>
+<text x="1384" y="773" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">  Output: DIDMatch[] with keyword + match location</text>
+<text x="1384" y="788" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5"></text>
+<text x="1384" y="803" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">Cross-Reference (parallel)</text>
+<text x="1384" y="818" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">  Log events + template staging lookups</text>
+<text x="1384" y="833" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">  Output: TriageResult with confidence level</text>
+<rect x="1370" y="880" width="510" height="190" rx="8" fill="#FEF3C7" stroke="#D97706" stroke-width="1.2"/>
+<text x="1384" y="900" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700">Data sources</text>
+<text x="1384" y="918" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">Settings.xml → Loop 1 (all jobs loaded at init)</text>
+<text x="1384" y="933" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">.msg file → MsgParser (email extraction)</text>
+<text x="1384" y="948" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">tblExternalDIDRef → Loop 2 (DID lookup)</text>
+<text x="1384" y="963" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">SQLite log index → cross-reference</text>
+<text x="1384" y="978" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">tblTemplateStaging → cross-reference</text>
+<text x="1384" y="993" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5"></text>
+<text x="1384" y="1008" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">Confidence levels:</text>
+<text x="1384" y="1023" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">  &quot;completed&quot; — DID + template run evidence</text>
+<text x="1384" y="1038" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">  &quot;processed&quot; — DID + log evidence</text>
+<text x="1384" y="1053" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">  &quot;monitored&quot; — job match only, no DIDs</text>
+<text x="600" y="133" fill="#2563EB" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="600" font-style="italic">deterministic</text>
+<text x="600" y="330" fill="#059669" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="600" font-style="italic">NLP / agentLoop</text>
+</svg>

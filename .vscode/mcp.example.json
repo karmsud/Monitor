@@ -1,0 +1,20 @@
+{
+	"inputs": [],
+	"servers": {
+		"mysql": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@liangshanli/mcp-server-mysql"
+			],
+			"env": {
+				"MYSQL_HOST": "127.0.0.1",
+				"MYSQL_PORT": "3306",
+				"MYSQL_USER": "your_username",
+				"MYSQL_PASSWORD": "your_password",
+				"MYSQL_DATABASE": "frp_database"
+			},
+			"type": "stdio"
+		}
+	}
+}

@@ -1,0 +1,47 @@
+<Settings>
+    <DisableJob>0</DisableJob>
+    <Server>testserver.example.com,1433</Server>
+    <Db>TestDB</Db>
+    <Email>
+        <SMTPServer>smtp.example.com</SMTPServer>
+        <SubjectTag>SFTP Monitor</SubjectTag>
+        <From>automation@example.com</From>
+        <Support>support@example.com</Support>
+    </Email>
+    <Outlook>
+        <Enabled>1</Enabled>
+        <CredFileLocation>\\server\config\cred.xml</CredFileLocation>
+        <FolderCollection>
+            <TestSftp_Alpha>
+                <Path>\\sftp-server\incoming\alpha</Path>
+                <ServicerID>150</ServicerID>
+                <DSN>SftpConnection1</DSN>
+                <SME>admin@example.com</SME>
+                <SaveLocation>{DealFolder}\{YYYY}\{M}\sftp\</SaveLocation>
+                <SkipList>\\server\config\skip_alpha.txt</SkipList>
+                <IgnoreList>\\server\config\ignore_alpha.txt</IgnoreList>
+                <Parsers>
+                    <StandardParser>\.csv$</StandardParser>
+                </Parsers>
+                <ZipContentFilter>.csv,.txt,.xlsx</ZipContentFilter>
+                <DayAdjust>-1</DayAdjust>
+            </TestSftp_Alpha>
+            <TestSftp_Beta>
+                <Path>\\sftp-server\incoming\beta</Path>
+                <ServicerID>200</ServicerID>
+                <DSN>SftpConnection2</DSN>
+                <SME>ops@example.com</SME>
+                <SaveLocation>{DealFolder}\{YYYY}\{M}\sftp\</SaveLocation>
+                <SkipList>\\server\config\skip_beta.txt</SkipList>
+                <IgnoreList>\\server\config\ignore_beta.txt</IgnoreList>
+                <Parsers>
+                    <ConditionalParser>^REPORT.+\.pdf$</ConditionalParser>
+                </Parsers>
+                <ZipContentFilter>.pdf</ZipContentFilter>
+                <Templates>
+                    <ChecklistTemplate>CL_SFTP</ChecklistTemplate>
+                </Templates>
+            </TestSftp_Beta>
+        </FolderCollection>
+    </Outlook>
+</Settings>

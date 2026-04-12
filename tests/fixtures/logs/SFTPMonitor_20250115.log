@@ -1,0 +1,28 @@
+##################################################################
+##	Script Name:    SFTPMonitor.ps1
+##	Parameters:     .\Settings\Settings.xml
+##	User:           TestUser
+##	Machine:        TESTMACHINE
+##	Log file:       \\server\Logs\SFTPMonitor_20250115.log
+##################################################################
+2025-01-15 09:00:01.000:	Running as ProcessID 55555...
+2025-01-15 09:00:02.000:	Mapping N:
+2025-01-15 09:00:02.100:	Done
+2025-01-15 09:00:05.000:	Checking SFTP folder for TPMT_Newrez_6616 (M:\!Sweeps\NewRez\IN\)...
+2025-01-15 09:00:05.100:	Found 2 file(s)
+2025-01-15 09:00:06.000:	Processing: xf00.newrez.iman.a20250115_report.xlsx
+2025-01-15 09:00:06.100:	Matched file to [MoveFile2] parser
+2025-01-15 09:00:07.000:	Matched DID to [TPMT 2025-HE1] and updated save location to [M:\BATCH\TPMT\Newrez\Data\2025\1\EmailExtract\]...
+2025-01-15 09:00:08.000:	Queue file [a20250115_report.xlsx] for [SFTP_Queuer_x] template
+2025-01-15 09:00:09.000:	Processing: xf00.newrez.iman.b20250115_data.csv
+2025-01-15 09:00:09.100:	Matched file to [MoveFile2] parser
+2025-01-15 09:00:10.000:	Did not find DID mapping for [b20250115_data.csv]...
+2025-01-15 09:00:11.000:	Checking SFTP folder for SPS_FMSCRT_3001 (M:\!Sweeps\SPS\In\)...
+2025-01-15 09:00:11.100:	Found 0 file(s)
+2025-01-15 09:00:12.000:	Checking SFTP folder for Ocwen (M:\!Sweeps\Ocwen\In)...
+2025-01-15 09:00:12.100:	Found 1 file(s)
+2025-01-15 09:00:13.000:	Processing: ocwen_monthly_jan2025.xlsx
+2025-01-15 09:00:13.100:	Matched file to [StandardParser] parser
+2025-01-15 09:00:14.000:	Did not find DID mapping for [ocwen_monthly_jan2025.xlsx]...
+2025-01-15 09:00:15.000:	ERROR: Connection timeout accessing SFTP path M:\!Sweeps\Broken\
+2025-01-15 09:00:16.000:	Done

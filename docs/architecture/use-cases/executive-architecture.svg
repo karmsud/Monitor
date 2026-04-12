@@ -1,0 +1,261 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1050" viewBox="0 0 1920 1050">
+<defs>
+<marker id="arr-det" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/></marker>
+<marker id="arr-nlp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#059669"/></marker>
+<marker id="arr-data" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7C3AED"/></marker>
+<marker id="arr-shared" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/></marker>
+<filter id="nodeShadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.12"/></filter>
+</defs>
+<rect width="1920" height="1050" fill="#FFFFFF"/>
+<rect x="40" y="15" width="1840" height="55" rx="6" fill="#0F172A"/>
+<text x="960" y="38" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="22" font-weight="700">FRP Agent — Executive Architecture</text>
+<text x="960" y="56" text-anchor="middle" fill="#94A3B8" font-family="Helvetica,Arial,sans-serif" font-size="12">High-level component view: VS Code extension → Python backend → persistent stores</text>
+<rect x="40" y="85" width="1260" height="310" rx="12" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="10 5"/>
+<rect x="54" y="74" width="133.2" height="22" rx="4" fill="#1E293B"/>
+<text x="120.6" y="89" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">User Workstation</text>
+<rect x="1224.8" y="74" width="61.2" height="22" rx="4" fill="#3B82F6"/>
+<text x="1255.4" y="89" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">Client</text>
+<rect x="40" y="445" width="1260" height="290" rx="12" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="10 5"/>
+<rect x="54" y="434" width="118.8" height="22" rx="4" fill="#1E293B"/>
+<text x="113.4" y="449" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">Python Backend</text>
+<rect x="1224.8" y="434" width="61.2" height="22" rx="4" fill="#F59E0B"/>
+<text x="1255.4" y="449" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">Server</text>
+<rect x="40" y="785" width="1260" height="175" rx="12" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="10 5"/>
+<rect x="54" y="774" width="140.4" height="22" rx="4" fill="#1E293B"/>
+<text x="124.2" y="789" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">Persistent Stores</text>
+<rect x="1239.2" y="774" width="46.8" height="22" rx="4" fill="#8B5CF6"/>
+<text x="1262.6" y="789" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600">Data</text>
+<line x1="80" y1="408" x2="1260" y2="408" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4 3"/>
+<rect x="544.25" y="397" width="251.5" height="22" rx="4" fill="white" stroke="#94A3B8" stroke-width="1"/>
+<text x="670.0" y="412" text-anchor="middle" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="600">JSON Line Protocol (stdin / stdout)</text>
+<rect x="345" y="108" width="935" height="272" rx="8" fill="#F0F4F8" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="6 3"/>
+<text x="357" y="124" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="600">Extension Layer</text>
+<rect x="325" y="475" width="690" height="240" rx="8" fill="#F0F4F8" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="6 3"/>
+<text x="337" y="491" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="600">Domain Engines</text>
+<rect x="67" y="138" width="240" height="68" rx="8" fill="black" opacity="0.06"/>
+<rect x="65" y="135" width="240" height="68" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="65" y="135" width="5" height="68" rx="2" fill="#3B82F6"/>
+<circle cx="97" cy="169" r="18" fill="#3B82F6"/>
+<g transform="translate(88,160) scale(0.75)"><circle cx="12" cy="8" r="4" fill="white"/><path d="M4 21v-1c0-2.8 3.6-5 8-5s8 2.2 8 5v1z" fill="white"/></g>
+<text x="123" y="166" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600">User</text>
+<text x="123" y="181" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10">GSF IR Team member</text>
+<rect x="67" y="233" width="240" height="68" rx="8" fill="black" opacity="0.06"/>
+<rect x="65" y="230" width="240" height="68" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="65" y="230" width="5" height="68" rx="2" fill="#3B82F6"/>
+<circle cx="97" cy="264" r="18" fill="#3B82F6"/>
+<g transform="translate(88,255) scale(0.75)"><rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="white" stroke-width="1.8"/><path d="M6 10l3 2-3 2" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="14" x2="17" y2="14" stroke="white" stroke-width="1.8" stroke-linecap="round"/></g>
+<text x="123" y="261" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600">VS Code IDE</text>
+<text x="123" y="276" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10">Editor + integrated terminal</text>
+<rect x="372" y="133" width="200" height="62" rx="8" fill="black" opacity="0.06"/>
+<rect x="370" y="130" width="200" height="62" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="370" y="130" width="5" height="62" rx="2" fill="#3B82F6"/>
+<circle cx="402" cy="161" r="18" fill="#3B82F6"/>
+<g transform="translate(393,152) scale(0.75)"><path d="M2 5c0-1 1-2 2-2h16c1 0 2 1 2 2v10c0 1-1 2-2 2H7l-5 4z" fill="white"/></g>
+<text x="428" y="158" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600">Copilot Chat</text>
+<text x="428" y="173" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10">@frp participant</text>
+<rect x="597" y="133" width="200" height="62" rx="8" fill="black" opacity="0.06"/>
+<rect x="595" y="130" width="200" height="62" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="595" y="130" width="5" height="62" rx="2" fill="#10B981"/>
+<circle cx="627" cy="161" r="18" fill="#10B981"/>
+<g transform="translate(618,152) scale(0.75)"><rect x="5" y="2" width="14" height="20" rx="1.5" fill="none" stroke="white" stroke-width="1.5"/><line x1="8" y1="8" x2="16" y2="8" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="11.5" x2="16" y2="11.5" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="15" x2="13" y2="15" stroke="white" stroke-width="1.2" stroke-linecap="round"/></g>
+<text x="653" y="158" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600">Slash Commands</text>
+<text x="653" y="173" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10">Deterministic routing</text>
+<rect x="822" y="133" width="200" height="62" rx="8" fill="black" opacity="0.06"/>
+<rect x="820" y="130" width="200" height="62" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="820" y="130" width="5" height="62" rx="2" fill="#10B981"/>
+<circle cx="852" cy="161" r="18" fill="#10B981"/>
+<g transform="translate(843,152) scale(0.75)"><line x1="4" y1="9" x2="20" y2="9" stroke="white" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="15" x2="20" y2="15" stroke="white" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="9" r="2.5" fill="white"/><circle cx="15" cy="15" r="2.5" fill="white"/></g>
+<text x="878" y="158" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600">Tool Bridge</text>
+<text x="878" y="173" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10">Config + backend spawn</text>
+<rect x="1047" y="133" width="200" height="62" rx="8" fill="black" opacity="0.06"/>
+<rect x="1045" y="130" width="200" height="62" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="1045" y="130" width="5" height="62" rx="2" fill="#10B981"/>
+<circle cx="1077" cy="161" r="18" fill="#10B981"/>
+<g transform="translate(1068,152) scale(0.75)"><circle cx="12" cy="12" r="4" fill="none" stroke="white" stroke-width="2.2"/><rect x="10.8" y="1.5" width="2.4" height="4" rx=".8" fill="white"/><rect x="10.8" y="18.5" width="2.4" height="4" rx=".8" fill="white"/><rect x="1.5" y="10.8" width="4" height="2.4" rx=".8" fill="white"/><rect x="18.5" y="10.8" width="4" height="2.4" rx=".8" fill="white"/></g>
+<text x="1103" y="158" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600">Response Renderer</text>
+<text x="1103" y="173" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10">Markdown + next actions</text>
+<rect x="372" y="221" width="200" height="62" rx="8" fill="black" opacity="0.06"/>
+<rect x="370" y="218" width="200" height="62" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="370" y="218" width="5" height="62" rx="2" fill="#EC4899"/>
+<circle cx="402" cy="249" r="18" fill="#EC4899"/>
+<text x="402" y="254" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700">AI</text>
+<text x="428" y="246" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600">Agent Loop</text>
+<text x="428" y="261" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10">NLP → LLM tool-call</text>
+<rect x="597" y="221" width="200" height="62" rx="8" fill="black" opacity="0.06"/>
+<rect x="595" y="218" width="200" height="62" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="595" y="218" width="5" height="62" rx="2" fill="#8B5CF6"/>
+<circle cx="627" cy="249" r="18" fill="#8B5CF6"/>
+<g transform="translate(618,240) scale(0.75)"><path d="M2 7.5c0-.8.7-1.5 1.5-1.5H9l2-2h9.5c.8 0 1.5.7 1.5 1.5v13c0 .8-.7 1.5-1.5 1.5h-17c-.8 0-1.5-.7-1.5-1.5z" fill="white"/></g>
+<text x="653" y="246" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600">Local Resources</text>
+<text x="653" y="261" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10">Email + SFTP settings</text>
+<rect x="67" y="498" width="220" height="68" rx="8" fill="black" opacity="0.06"/>
+<rect x="65" y="495" width="220" height="68" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="65" y="495" width="5" height="68" rx="2" fill="#F59E0B"/>
+<circle cx="97" cy="529" r="18" fill="#F59E0B"/>
+<text x="97" y="534" text-anchor="middle" fill="white" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700">Py</text>
+<text x="123" y="526" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600">CLI Server</text>
+<text x="123" y="541" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10">main.py --server mode</text>
+<rect x="67" y="593" width="220" height="68" rx="8" fill="black" opacity="0.06"/>
+<rect x="65" y="590" width="220" height="68" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="65" y="590" width="5" height="68" rx="2" fill="#F59E0B"/>
+<circle cx="97" cy="624" r="18" fill="#F59E0B"/>
+<g transform="translate(88,615) scale(0.75)"><path d="M12 3l9 9-9 9-9-9z" fill="none" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="2" fill="white"/></g>
+<text x="123" y="621" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600">Command Router</text>
+<text x="123" y="636" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10">DISPATCH → handler</text>
+<rect x="352" y="503" width="200" height="62" rx="8" fill="black" opacity="0.06"/>
+<rect x="350" y="500" width="200" height="62" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="350" y="500" width="5" height="62" rx="2" fill="#10B981"/>
+<circle cx="382" cy="531" r="18" fill="#10B981"/>
+<g transform="translate(373,522) scale(0.75)"><path d="M2 7.5c0-.8.7-1.5 1.5-1.5H9l2-2h9.5c.8 0 1.5.7 1.5 1.5v13c0 .8-.7 1.5-1.5 1.5h-17c-.8 0-1.5-.7-1.5-1.5z" fill="white"/></g>
+<text x="408" y="528" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600">XML Management</text>
+<text x="408" y="543" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10">CRUD, Clone, Diff, Rollback</text>
+<rect x="577" y="503" width="200" height="62" rx="8" fill="black" opacity="0.06"/>
+<rect x="575" y="500" width="200" height="62" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="575" y="500" width="5" height="62" rx="2" fill="#10B981"/>
+<circle cx="607" cy="531" r="18" fill="#10B981"/>
+<g transform="translate(598,522) scale(0.75)"><rect x="5" y="2" width="14" height="20" rx="1.5" fill="none" stroke="white" stroke-width="1.5"/><line x1="8" y1="8" x2="16" y2="8" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="11.5" x2="16" y2="11.5" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="15" x2="13" y2="15" stroke="white" stroke-width="1.2" stroke-linecap="round"/></g>
+<text x="633" y="528" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600">Log Analytics</text>
+<text x="633" y="543" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10">Search, Health, Trends</text>
+<rect x="352" y="593" width="200" height="62" rx="8" fill="black" opacity="0.06"/>
+<rect x="350" y="590" width="200" height="62" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="350" y="590" width="5" height="62" rx="2" fill="#10B981"/>
+<circle cx="382" cy="621" r="18" fill="#10B981"/>
+<g transform="translate(373,612) scale(0.75)"><path d="M2 5c0-1 1-2 2-2h16c1 0 2 1 2 2v10c0 1-1 2-2 2H7l-5 4z" fill="white"/></g>
+<text x="408" y="618" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600">Email Triage</text>
+<text x="408" y="633" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10">Match, Verify, Analyze</text>
+<rect x="577" y="593" width="200" height="62" rx="8" fill="black" opacity="0.06"/>
+<rect x="575" y="590" width="200" height="62" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="575" y="590" width="5" height="62" rx="2" fill="#10B981"/>
+<circle cx="607" cy="621" r="18" fill="#10B981"/>
+<g transform="translate(598,612) scale(0.75)"><circle cx="12" cy="12" r="4" fill="none" stroke="white" stroke-width="2.2"/><rect x="10.8" y="1.5" width="2.4" height="4" rx=".8" fill="white"/><rect x="10.8" y="18.5" width="2.4" height="4" rx=".8" fill="white"/><rect x="1.5" y="10.8" width="4" height="2.4" rx=".8" fill="white"/><rect x="18.5" y="10.8" width="4" height="2.4" rx=".8" fill="white"/></g>
+<text x="633" y="618" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600">Intel &amp; Coverage</text>
+<text x="633" y="633" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10">Collisions, Orphans, Gaps</text>
+<rect x="1052" y="513" width="220" height="68" rx="8" fill="black" opacity="0.06"/>
+<rect x="1050" y="510" width="220" height="68" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="1050" y="510" width="5" height="68" rx="2" fill="#F59E0B"/>
+<circle cx="1082" cy="544" r="18" fill="#F59E0B"/>
+<g transform="translate(1073,535) scale(0.75)"><path d="M2 7.5c0-.8.7-1.5 1.5-1.5H9l2-2h9.5c.8 0 1.5.7 1.5 1.5v13c0 .8-.7 1.5-1.5 1.5h-17c-.8 0-1.5-.7-1.5-1.5z" fill="white"/></g>
+<text x="1108" y="541" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600">Backup Manager</text>
+<text x="1108" y="556" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10">Versioned XML backups</text>
+<rect x="1052" y="603" width="220" height="68" rx="8" fill="black" opacity="0.06"/>
+<rect x="1050" y="600" width="220" height="68" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="1050" y="600" width="5" height="68" rx="2" fill="#10B981"/>
+<circle cx="1082" cy="634" r="18" fill="#10B981"/>
+<g transform="translate(1073,625) scale(0.75)"><rect x="5" y="2" width="14" height="20" rx="1.5" fill="none" stroke="white" stroke-width="1.5"/><line x1="8" y1="8" x2="16" y2="8" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="11.5" x2="16" y2="11.5" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="15" x2="13" y2="15" stroke="white" stroke-width="1.2" stroke-linecap="round"/></g>
+<text x="1108" y="631" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600">Analysis Engine</text>
+<text x="1108" y="646" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10">Consolidation + trends</text>
+<rect x="67" y="823" width="265" height="68" rx="8" fill="black" opacity="0.06"/>
+<rect x="65" y="820" width="265" height="68" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="65" y="820" width="5" height="68" rx="2" fill="#8B5CF6"/>
+<circle cx="97" cy="854" r="18" fill="#8B5CF6"/>
+<g transform="translate(88,845) scale(0.75)"><path d="M2 7.5c0-.8.7-1.5 1.5-1.5H9l2-2h9.5c.8 0 1.5.7 1.5 1.5v13c0 .8-.7 1.5-1.5 1.5h-17c-.8 0-1.5-.7-1.5-1.5z" fill="white"/></g>
+<text x="123" y="851" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600">Settings XML</text>
+<text x="123" y="866" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10">Email + SFTP job definitions</text>
+<rect x="362" y="823" width="265" height="68" rx="8" fill="black" opacity="0.06"/>
+<rect x="360" y="820" width="265" height="68" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="360" y="820" width="5" height="68" rx="2" fill="#8B5CF6"/>
+<circle cx="392" cy="854" r="18" fill="#8B5CF6"/>
+<g transform="translate(383,845) scale(0.75)"><ellipse cx="12" cy="7" rx="7.5" ry="3" fill="none" stroke="white" stroke-width="1.8"/><path d="M4.5 7v10c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V7" fill="none" stroke="white" stroke-width="1.8"/><path d="M4.5 12.5c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3" fill="none" stroke="white" stroke-width="1.5"/></g>
+<text x="418" y="851" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600">SQLite Cache</text>
+<text x="418" y="866" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10">Job index + log index</text>
+<rect x="657" y="823" width="265" height="68" rx="8" fill="black" opacity="0.06"/>
+<rect x="655" y="820" width="265" height="68" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="655" y="820" width="5" height="68" rx="2" fill="#8B5CF6"/>
+<circle cx="687" cy="854" r="18" fill="#8B5CF6"/>
+<g transform="translate(678,845) scale(0.75)"><ellipse cx="12" cy="7" rx="7.5" ry="3" fill="none" stroke="white" stroke-width="1.8"/><path d="M4.5 7v10c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V7" fill="none" stroke="white" stroke-width="1.8"/><path d="M4.5 12.5c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3" fill="none" stroke="white" stroke-width="1.5"/></g>
+<text x="713" y="851" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600">SQL Server</text>
+<text x="713" y="866" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10">DID refs + template staging</text>
+<rect x="952" y="823" width="265" height="68" rx="8" fill="black" opacity="0.06"/>
+<rect x="950" y="820" width="265" height="68" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="950" y="820" width="5" height="68" rx="2" fill="#8B5CF6"/>
+<circle cx="982" cy="854" r="18" fill="#8B5CF6"/>
+<g transform="translate(973,845) scale(0.75)"><path d="M2 7.5c0-.8.7-1.5 1.5-1.5H9l2-2h9.5c.8 0 1.5.7 1.5 1.5v13c0 .8-.7 1.5-1.5 1.5h-17c-.8 0-1.5-.7-1.5-1.5z" fill="white"/></g>
+<text x="1008" y="851" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600">File System</text>
+<text x="1008" y="866" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10">App logs, .msg files, backups</text>
+<rect x="820" y="225" width="60" height="22" rx="11" fill="#10B981" opacity="0.12"/>
+<text x="850" y="240" text-anchor="middle" fill="#10B981" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="600">/jobs</text>
+<rect x="935" y="225" width="60" height="22" rx="11" fill="#10B981" opacity="0.12"/>
+<text x="965" y="240" text-anchor="middle" fill="#10B981" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="600">/logs</text>
+<rect x="1050" y="225" width="60" height="22" rx="11" fill="#10B981" opacity="0.12"/>
+<text x="1080" y="240" text-anchor="middle" fill="#10B981" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="600">/triage</text>
+<rect x="1165" y="225" width="60" height="22" rx="11" fill="#10B981" opacity="0.12"/>
+<text x="1195" y="240" text-anchor="middle" fill="#10B981" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="600">/clone</text>
+<rect x="820" y="252" width="60" height="22" rx="11" fill="#10B981" opacity="0.12"/>
+<text x="850" y="267" text-anchor="middle" fill="#10B981" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="600">/deals</text>
+<rect x="935" y="252" width="66" height="22" rx="11" fill="#10B981" opacity="0.12"/>
+<text x="968" y="267" text-anchor="middle" fill="#10B981" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="600">/staging</text>
+<rect x="1050" y="252" width="60" height="22" rx="11" fill="#10B981" opacity="0.12"/>
+<text x="1080" y="267" text-anchor="middle" fill="#10B981" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="600">/sync</text>
+<rect x="1165" y="252" width="86" height="22" rx="11" fill="#10B981" opacity="0.12"/>
+<text x="1208" y="267" text-anchor="middle" fill="#10B981" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="600">/rebuild-db</text>
+<path d="M 188 203 L 188 230" fill="none" stroke="#2563EB" stroke-width="2" marker-end="url(#arr-det)"/>
+<path d="M 305 264 L 340 264 L 340 161 L 370 161" fill="none" stroke="#2563EB" stroke-width="2" marker-end="url(#arr-det)"/>
+<path d="M 570 161 L 595 161" fill="none" stroke="#2563EB" stroke-width="2" marker-end="url(#arr-det)"/>
+<path d="M 795 161 L 820 161" fill="none" stroke="#2563EB" stroke-width="2" marker-end="url(#arr-det)"/>
+<path d="M 1020 161 L 1045 161" fill="none" stroke="#2563EB" stroke-width="2" marker-end="url(#arr-det)"/>
+<path d="M 470 192 L 470 218" fill="none" stroke="#059669" stroke-width="2" marker-end="url(#arr-nlp)"/>
+<path d="M 570 249 L 810 249 L 810 192" fill="none" stroke="#059669" stroke-width="2" marker-end="url(#arr-nlp)"/>
+<path d="M 830 380 L 830 408 L 175 408 L 175 495" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arr-shared)"/>
+<path d="M 175 563 L 175 590" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arr-shared)"/>
+<path d="M 285 624 L 325 624" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arr-shared)"/>
+<path d="M 1015 562 L 1050 544" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arr-shared)"/>
+<path d="M 1015 624 L 1050 634" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arr-shared)"/>
+<path d="M 197 735 L 197 820" fill="none" stroke="#7C3AED" stroke-width="2" marker-end="url(#arr-data)" stroke-dasharray="6 4"/>
+<path d="M 492 735 L 492 820" fill="none" stroke="#7C3AED" stroke-width="2" marker-end="url(#arr-data)" stroke-dasharray="6 4"/>
+<path d="M 787 735 L 787 820" fill="none" stroke="#7C3AED" stroke-width="2" marker-end="url(#arr-data)" stroke-dasharray="6 4"/>
+<path d="M 1082 735 L 1082 820" fill="none" stroke="#7C3AED" stroke-width="2" marker-end="url(#arr-data)" stroke-dasharray="6 4"/>
+<rect x="1370" y="85" width="510" height="270" rx="8" fill="white" stroke="#CBD5E1" stroke-width="1.2"/>
+<text x="1384" y="107" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700">Legend</text>
+<line x1="1384" y1="115" x2="1866" y2="115" stroke="#CBD5E1" stroke-width="0.5"/>
+<line x1="1388" y1="137" x2="1430" y2="137" stroke="#2563EB" stroke-width="2.5"/>
+<circle cx="1430" cy="137" r="4" fill="#2563EB"/>
+<text x="1442" y="141" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11">User interaction flow</text>
+<line x1="1388" y1="165" x2="1430" y2="165" stroke="#059669" stroke-width="2.5"/>
+<circle cx="1430" cy="165" r="4" fill="#059669"/>
+<text x="1442" y="169" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11">NLP / AI alternative path</text>
+<line x1="1388" y1="193" x2="1430" y2="193" stroke="#475569" stroke-width="2.5"/>
+<circle cx="1430" cy="193" r="4" fill="#475569"/>
+<text x="1442" y="197" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11">Command transport</text>
+<line x1="1388" y1="221" x2="1430" y2="221" stroke="#7C3AED" stroke-width="2.5" stroke-dasharray="6 4"/>
+<circle cx="1430" cy="221" r="4" fill="#7C3AED"/>
+<text x="1442" y="225" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="11">Data store access</text>
+<circle cx="1398" cy="259" r="7" fill="#3B82F6"/>
+<text x="1412" y="263" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="10">User-facing / UI</text>
+<circle cx="1398" cy="281" r="7" fill="#10B981"/>
+<text x="1412" y="285" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="10">Processing / routing</text>
+<circle cx="1398" cy="303" r="7" fill="#F59E0B"/>
+<text x="1412" y="307" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="10">Backend / CLI engine</text>
+<circle cx="1398" cy="325" r="7" fill="#8B5CF6"/>
+<text x="1412" y="329" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="10">Data store / config</text>
+<circle cx="1398" cy="347" r="7" fill="#EC4899"/>
+<text x="1412" y="351" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="10">AI / LLM</text>
+<rect x="1370" y="370" width="510" height="220" rx="8" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1.2"/>
+<text x="1384" y="390" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700">How It Works</text>
+<text x="1384" y="408" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">FRP Agent is a VS Code chat extension (@frp)</text>
+<text x="1384" y="423" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">that monitors email &amp; SFTP transfer jobs.</text>
+<text x="1384" y="438" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5"></text>
+<text x="1384" y="453" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">Two interaction paths:</text>
+<text x="1384" y="468" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">  Blue — typed slash commands (/jobs, /logs…)</text>
+<text x="1384" y="483" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">  Green — natural language via LLM</text>
+<text x="1384" y="498" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5"></text>
+<text x="1384" y="513" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">Both paths converge at the Tool Bridge,</text>
+<text x="1384" y="528" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">which spawns a Python backend over JSON</text>
+<text x="1384" y="543" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">line transport (stdin/stdout).</text>
+<rect x="1370" y="605" width="510" height="265" rx="8" fill="#F0F9FF" stroke="#3B82F6" stroke-width="1.2"/>
+<text x="1384" y="625" fill="#1E293B" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700">Key Capabilities</text>
+<text x="1384" y="643" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">XML Job Configuration</text>
+<text x="1384" y="658" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">  CRUD, clone, diff, rollback with backups</text>
+<text x="1384" y="673" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5"></text>
+<text x="1384" y="688" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">Log Search &amp; Analytics</text>
+<text x="1384" y="703" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">  Health scoring, DID failures, trends</text>
+<text x="1384" y="718" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5"></text>
+<text x="1384" y="733" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">Email Triage &amp; Job Matching</text>
+<text x="1384" y="748" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">  .msg parsing, multi-loop confidence scoring</text>
+<text x="1384" y="763" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5"></text>
+<text x="1384" y="778" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">Intel &amp; Coverage Analysis</text>
+<text x="1384" y="793" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">  Collision detection, orphan finding, gap reports</text>
+<text x="1384" y="808" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5"></text>
+<text x="1384" y="823" fill="#475569" font-family="Helvetica,Arial,sans-serif" font-size="10.5">Deal &amp; Template Staging Lookups</text>
+<text x="575" y="120" fill="#2563EB" font-family="Helvetica,Arial,sans-serif" font-size="9" font-weight="600" font-style="italic">deterministic</text>
+<text x="478" y="210" fill="#059669" font-family="Helvetica,Arial,sans-serif" font-size="9" font-weight="600" font-style="italic">NLP</text>
+</svg>

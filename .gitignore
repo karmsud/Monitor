@@ -1,0 +1,57 @@
+# ── Python ────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+*.egg-info/
+*.egg
+
+# ── Databases ─────────────────────────────────────────────────────
+*.db
+
+# ── Secrets & credentials — NEVER commit ─────────────────────────
+config/secrets_*.json
+!config/secrets_*.example.json
+mssql_connection/secrets*.toml
+!mssql_connection/secrets*.example.toml
+.vscode/mcp.json
+
+# ── Production settings (contain server names, UNC paths, emails) ─
+Settings.ps1
+Settings sample sftp.ps1
+Email Settings/
+SFTP Settings/
+
+# ── Production data exports ──────────────────────────────────────
+tblExternalDIDRef.csv
+tblTemplateStaging.csv
+tblTemplateStaging_grid1.csv
+mssql_connection/result.csv
+
+# ── Application log files ────────────────────────────────────────
+Email Logs/
+SFTP Logs/
+
+# ── VS Code extension build artefacts ────────────────────────────
+extension/bin/
+extension/.vscode-test/
+dist/
+build/
+*.vsix
+
+# ── Node / npm ───────────────────────────────────────────────────
+node_modules/
+
+# ── Environment ──────────────────────────────────────────────────
+.env
+.env.*
+
+# ── OS ───────────────────────────────────────────────────────────
+Thumbs.db
+.DS_Store
+
+# ── IDE / tool state ────────────────────────────────────────────
+.setting/
+.mcp-debug-tools/
